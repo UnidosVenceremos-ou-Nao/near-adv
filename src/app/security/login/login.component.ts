@@ -1,8 +1,8 @@
-import { SecurityService } from './../services/security.service';
 import { LoginService } from './../services/login.service';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { SecurityService } from '../services/security.service';
 @Component({
   selector: 'sdv-login',
   templateUrl: './login.component.html',
@@ -10,8 +10,8 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   formulario = new FormGroup({
-    usuario: new FormControl(''),
-    senha: new FormControl(''),
+    usuario: new FormControl(),
+    senha: new FormControl(),
   });
 
   constructor(
@@ -20,20 +20,14 @@ export class LoginComponent {
     private loginService: LoginService
   ) {}
 
-  ngOnInit() {
-    this.securityService.clearLocalStorage();
-  }
+  ngOnInit() {}
 
   acessar() {
-    if (!this.formulario.valid) {
-      console.log('ERRO');
-      return false;
-    }
-    this.securityService.setToken('TESTE');
+    localStorage.clear();
 
-    setTimeout(() => {
-      return this.loginService.acessar();
-    }, 500);
-    return true;
+    let email = this.formulario.controls['usuario'].value;
+    let password = this.formulario.controls['senha'].value;
+
+    this.loginService.SignIn(email, password);
   }
 }
