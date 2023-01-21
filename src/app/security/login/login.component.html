@@ -1,0 +1,41 @@
+<section>
+  <div class="row vh-100 m-0">
+    <div
+      class="col-lg-6 col-md-12 d-flex justify-content-center align-items-center"
+    >
+      <div class="body-login">
+        <h1>Adv System</h1>
+        <form [formGroup]="formulario">
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="usuario"
+              required
+              placeholder="Usuário"
+              aria-label="Usuário"
+            />
+          </div>
+
+          <div class="input-group mb-3">
+            <input
+              type="password"
+              required
+              class="form-control"
+              formControlName="senha"
+              placeholder="Senha"
+              aria-label="Senha"
+            />
+          </div>
+        </form>
+        <button type="button" class="btn btn-primary w-100" (click)="acessar()">
+          Acessar
+        </button>
+        <p class="pt-2">Esqueceu a senha?<a href="#"> Clique aqui!</a></p>
+      </div>
+    </div>
+    <div
+      class="col-lg-6 col-md-12 d-flex justify-content-center align-items-center bg-primary"
+    ></div>
+  </div>
+</section>

@@ -1,0 +1,17 @@
+.sidenav {
+  width: 19vw;
+  height: 100vh;
+}
+
+.nav-link {
+  color: white;
+}
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: #939393 !important;
+}
+
+.disabled {
+  cursor: none;
+  color: rgb(125, 125, 125);
+}

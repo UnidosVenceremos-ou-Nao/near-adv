@@ -1,0 +1,11 @@
+<div class="d-flex">
+  <sdv-navbar
+    class="vh-100"
+    [isExpanded]="sidebarExpanded"
+    (toggleSidebar)="sidebarExpanded = !sidebarExpanded"
+  >
+  </sdv-navbar>
+  <div class="body" [ngClass]="{ sidebarExpanded: sidebarExpanded }">
+    <router-outlet></router-outlet>
+  </div>
+</div>

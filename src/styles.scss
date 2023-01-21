@@ -1,0 +1,66 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+* {
+  font-family: "Montserrat", sans-serif;
+  h1 {
+    .title {
+      font-weight: 900;
+    }
+  }
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+a {
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
+}
+img .img-login {
+  width: 100px;
+  height: 100px;
+}
+
+.body-login {
+  width: 60%;
+}
+
+input {
+  width: 100%;
+  margin-bottom: 19px;
+  padding: 5px 10px;
+}
+
+adv-formulario {
+  label {
+    font-size: 0.9rem;
+    padding-left: 5px;
+    margin-bottom: 2px;
+  }
+}
+
+adv-inputtext {
+  input {
+    border-radius: 7px;
+    border: 1px solid silver;
+  }
+}
+
+.range {
+  &.left {
+    border: 1px solid silver;
+    border-radius: 7px 0px 0px 7px;
+    border-right: none;
+  }
+  &.right {
+    border: 1px solid silver;
+    border-radius: 0px 7px 7px 0px;
+  }
+}

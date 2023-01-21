@@ -1,0 +1,21 @@
+<label [for]="identificador">{{ titulo | titlecase }}</label>
+<div class="row">
+  <div class="w-50 pr-0">
+    <input
+      type="text"
+      [id]="identificador"
+      class="range left"
+      [disabled]="desabilitar"
+      [(value)]="valorInicial"
+    />
+  </div>
+  <div class="w-50 pl-0">
+    <input
+      type="text"
+      class="range right"
+      [class.disabled]="desabilitar"
+      [disabled]="desabilitar"
+      [(value)]="valorFinal"
+    />
+  </div>
+</div>

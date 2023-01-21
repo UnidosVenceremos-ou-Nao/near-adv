@@ -1,0 +1,21 @@
+<label [for]="identificador">{{ titulo | titlecase }}</label>
+<div class="row">
+  <div class="w-50 pr-0">
+    <input
+      type="date"
+      [id]="identificador"
+      class="range left"
+      [disabled]="desabilitar"
+      [(value)]="dataInicial"
+    />
+  </div>
+  <div class="w-50 pl-0">
+    <input
+      type="date"
+      class="range right"
+      [class.disabled]="desabilitar"
+      [disabled]="desabilitar"
+      [(value)]="dataFinal"
+    />
+  </div>
+</div>
