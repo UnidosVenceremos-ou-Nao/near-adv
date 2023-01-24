@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./usuario.component.scss'],
 })
 export class UsuarioComponent {
-  titulo = 'Cadastro de Usuário';
+  titulo = 'Listagem de Usuário(s)';
 }
