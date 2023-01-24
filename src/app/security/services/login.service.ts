@@ -47,20 +47,12 @@ export class LoginService {
         debugger;
         this.angularFireAuth.authState.subscribe((user) => {
           if (user) {
+            debugger;
             result.user
               ?.getIdToken()
               .then((tokenResult) => {
                 this.usuarioLogadoService.setToken(tokenResult);
                 this.router.navigate(['/inicio']);
-                // this.getInfo(user.uid, tokenResult).subscribe({
-                //   next: (res: ApiReturn) => {
-                //     this.usuarioLogadoService.setUsuario(res.return);
-                //     this.router.navigate(['/inicio']);
-                //   },
-                //   error: (error: any) => {
-                //     console.error(error);
-                //   },
-                // });
               })
               .catch((error) => {
                 window.alert(Utils.obterStatusRetorno(error.message));

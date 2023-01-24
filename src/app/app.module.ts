@@ -1,4 +1,3 @@
-import { RequestInterceptor } from './shared/sistema/interceptor/request.interceptor';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -13,6 +12,7 @@ import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './security/login/login.component';
+import { RequestInterceptor } from './shared/sistema/interceptor/request.interceptor';
 @NgModule({
   declarations: [AppComponent, LoginComponent],
   imports: [

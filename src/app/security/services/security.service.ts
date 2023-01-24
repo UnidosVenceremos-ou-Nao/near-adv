@@ -23,7 +23,6 @@ export class SecurityService {
 
   public setIdUsuario(id: Number) {
     let usuario = this.getUsuario();
-    // usuario.id = id;
     localStorage.removeItem(this.USUARIO_LOCAL_HISTORY);
     this.setUsuario(usuario);
   }
@@ -55,6 +54,10 @@ export class SecurityService {
   getToken(): string {
     let token: any = localStorage.getItem(this.TOKEN_LOCAL_HISTORY);
     return token;
+  }
+
+  getFirebaseUser() {
+    return JSON.parse(localStorage.getItem('user')!);
   }
 
   removeToken() {

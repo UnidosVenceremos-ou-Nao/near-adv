@@ -20,11 +20,11 @@ export class LoginComponent {
     private loginService: LoginService
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    localStorage.clear();
+  }
 
   acessar() {
-    localStorage.clear();
-
     let email = this.formulario.controls['email'].value;
     let password = this.formulario.controls['senha'].value;
 
