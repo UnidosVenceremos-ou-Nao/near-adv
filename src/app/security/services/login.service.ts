@@ -7,6 +7,7 @@ import {
 } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import Utils from 'src/app/shared/sistema/utils/utils';
 import { environment } from 'src/environments/environment';
 import { ApiReturn } from '../interfaces/apiReturn';
 import { FirebaseUser, NovoUsuario } from '../interfaces/firebaseuser';
@@ -42,46 +43,33 @@ export class LoginService {
     this.angularFireAuth
       .signInWithEmailAndPassword(email, password)
       .then(async (result) => {
+        this.SetUserData(result.user);
         debugger;
-        if (!result.user?.emailVerified) {
-          // await this.notificationService
-          //   .enviarNotificacaoSimNao(
-          //     'Ops!',
-          //     'Confirme seu email! \n Deseja um novo link de confirmação ?',
-          //     'warning'
-          //   )
-          //   .then((result) => {
-          //     if (result.isConfirmed == true) {
-          //       this.sendEmailValidation(email, password);
-          //     }
-          //   });
-        } else {
-          this.SetUserData(result.user);
-          this.angularFireAuth.authState.subscribe((user) => {
-            if (user) {
-              result.user
-                ?.getIdToken()
-                .then((tokenResult) => {
-                  this.usuarioLogadoService.setToken(tokenResult);
-                  this.getInfo(user.uid, tokenResult).subscribe({
-                    next: (res: ApiReturn) => {
-                      this.usuarioLogadoService.setUsuario(res.return);
-                      this.router.navigate(['/home']);
-                    },
-                    error: (error: any) => {
-                      console.error(error);
-                    },
-                  });
-                })
-                .catch((error) => {
-                  window.alert(error.message);
-                });
-            }
-          });
-        }
+        this.angularFireAuth.authState.subscribe((user) => {
+          if (user) {
+            result.user
+              ?.getIdToken()
+              .then((tokenResult) => {
+                this.usuarioLogadoService.setToken(tokenResult);
+                this.router.navigate(['/inicio']);
+                // this.getInfo(user.uid, tokenResult).subscribe({
+                //   next: (res: ApiReturn) => {
+                //     this.usuarioLogadoService.setUsuario(res.return);
+                //     this.router.navigate(['/inicio']);
+                //   },
+                //   error: (error: any) => {
+                //     console.error(error);
+                //   },
+                // });
+              })
+              .catch((error) => {
+                window.alert(Utils.obterStatusRetorno(error.message));
+              });
+          }
+        });
       })
       .catch((error) => {
-        window.alert(error.message);
+        window.alert(Utils.obterStatusRetorno(error.message));
       });
   }
 

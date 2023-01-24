@@ -20,6 +20,10 @@ export class AuthLoginGuard implements CanActivate {
     this.token = this.securityService.getToken();
   }
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    return true;
+    if (this.token) {
+      return true;
+    }
+    this.router.navigate(['/login']);
+    return false;
   }
 }

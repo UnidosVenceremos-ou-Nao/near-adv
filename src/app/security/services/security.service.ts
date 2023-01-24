@@ -57,7 +57,7 @@ export class SecurityService {
     return token;
   }
 
-  setLoggedUser(user: any) {
-    this.loggedUser.next(user);
+  removeToken() {
+    localStorage.removeItem(this.TOKEN_LOCAL_HISTORY);
   }
 }

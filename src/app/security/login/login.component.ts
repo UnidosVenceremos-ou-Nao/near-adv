@@ -10,7 +10,7 @@ import { SecurityService } from '../services/security.service';
 })
 export class LoginComponent {
   formulario = new FormGroup({
-    usuario: new FormControl(),
+    email: new FormControl(),
     senha: new FormControl(),
   });
 
@@ -25,7 +25,7 @@ export class LoginComponent {
   acessar() {
     localStorage.clear();
 
-    let email = this.formulario.controls['usuario'].value;
+    let email = this.formulario.controls['email'].value;
     let password = this.formulario.controls['senha'].value;
 
     this.loginService.SignIn(email, password);
