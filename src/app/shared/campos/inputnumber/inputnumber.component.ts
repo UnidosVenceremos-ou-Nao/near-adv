@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class InputnumberComponent {
   @Input('nome') nome: string = '';
-  @Input('valor') valorInicial: any;
+  @Input('valorInicial') valorInicial: any;
   @Input('identificador') identificador: string = 'abc';
   @Input('desabilitar') desabilitar: any = false;
 }

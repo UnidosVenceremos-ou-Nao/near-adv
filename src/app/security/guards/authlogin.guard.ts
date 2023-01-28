@@ -18,18 +18,16 @@ export class AuthLoginGuard implements CanActivate {
     private router: Router,
     private securityService: SecurityService
   ) {
-    this.token = this.securityService.getToken();
+    this.token = this.securityService.getToken().subscribe((token) => {
+      return token;
+    });
     this.userFirebase = this.securityService.getFirebaseUser();
   }
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    if (
-      this.token &&
-      new Date(this.userFirebase.stsTokenManager.expirationTime) > new Date()
-    ) {
+    if (this.token) {
       return true;
-    } else {
-      this.router.navigate(['/login']);
-      return false;
     }
+    this.router.navigate(['/login']);
+    return false;
   }
 }

@@ -20,7 +20,10 @@ export class RequestInterceptor implements HttpInterceptor {
     request: HttpRequest<unknown>,
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
-    if (this.securityService.getToken()) {
+    let a = this.securityService.getToken().pipe((data: any) => {
+      return data;
+    });
+    if (true) {
       let token = this.securityService.getToken();
       let headers = request.headers.set('Content-Type', 'application/json');
 

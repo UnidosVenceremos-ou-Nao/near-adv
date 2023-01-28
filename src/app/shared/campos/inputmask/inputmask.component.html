@@ -1,8 +1,8 @@
-<label [for]="identificador">{{ nome }}</label>
+<label [for]="identificador" class="class_label">{{ nome | titlecase }}</label>
 <input
-  class="inputtext"
   type="text"
   [(value)]="valorInicial"
   [id]="identificador"
   [(disabled)]="desabilitar"
+  [mask]="mascara"
 />

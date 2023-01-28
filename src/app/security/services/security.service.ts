@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject, Subject, Observable } from 'rxjs';
 import { Usuario } from '../interfaces/firebaseuser';
 import { Perfil } from '../interfaces/perfil';
 
@@ -7,7 +7,8 @@ import { Perfil } from '../interfaces/perfil';
   providedIn: 'root',
 })
 export class SecurityService {
-  public loggedUser = new Subject<any>();
+  public loggedUser = new BehaviorSubject<string>('');
+  public token = new BehaviorSubject<string>('');
   constructor() {}
 
   USUARIO_LOCAL_HISTORY = 'USUARIO';
@@ -18,7 +19,7 @@ export class SecurityService {
   }
 
   public setToken(bearer: any) {
-    localStorage.setItem(this.TOKEN_LOCAL_HISTORY, bearer);
+    this.token.next(bearer);
   }
 
   public setIdUsuario(id: Number) {
@@ -51,9 +52,8 @@ export class SecurityService {
     return (<any>Perfil)[usuario.perfil];
   }
 
-  getToken(): string {
-    let token: any = localStorage.getItem(this.TOKEN_LOCAL_HISTORY);
-    return token;
+  getToken(): Observable<string> {
+    return this.token.asObservable();
   }
 
   getFirebaseUser() {

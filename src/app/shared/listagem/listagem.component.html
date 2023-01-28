@@ -1,0 +1,33 @@
+<div class="body">
+  <div class="d-flex mb-3 justify-content-between">
+    <div>
+      <h4 class="title">{{ titulo }}</h4>
+    </div>
+    <div class="actions-header">
+      <button
+        type="button"
+        class="btn btn-outline-primary disabled"
+        *ngIf="verBotaoSecundario"
+        (click)="clickBotaoSecundario($event)"
+      >
+        <i class="fa-sharp fa-solid fa-arrow-up-from-bracket"></i
+        >{{ tituloBotaoSecundario }}
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        *ngIf="verBotaoNovo"
+        (click)="clickBotaoNovo($event)"
+      >
+        <i class="fa-sharp fa-solid fa-plus"></i>Novo
+      </button>
+    </div>
+  </div>
+  <hr />
+  <div class="content">
+    <ng-content select="[content]"></ng-content>
+  </div>
+  <div class="actions">
+    <ng-content select="[actions]"></ng-content>
+  </div>
+</div>

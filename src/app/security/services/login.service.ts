@@ -44,10 +44,9 @@ export class LoginService {
       .signInWithEmailAndPassword(email, password)
       .then(async (result) => {
         this.SetUserData(result.user);
-        debugger;
+
         this.angularFireAuth.authState.subscribe((user) => {
           if (user) {
-            debugger;
             result.user
               ?.getIdToken()
               .then((tokenResult) => {
@@ -106,7 +105,6 @@ export class LoginService {
       .signInWithEmailAndPassword(email, password)
       .then((result) => {
         this.angularFireAuth.currentUser.then((user) => {
-          debugger;
           user?.sendEmailVerification();
           this.SignOut();
         });

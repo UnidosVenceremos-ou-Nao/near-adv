@@ -3,13 +3,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
-import { DaterangeComponent } from './daterange/daterange.component';
+import { DaterangeComponent } from './campos/daterange/daterange.component';
+import { InputCpfCnpjComponent } from './campos/inputdocumento/inputdocumento.component';
+import { InputmaskComponent } from './campos/inputmask/inputmask.component';
+import { InputnumberComponent } from './campos/inputnumber/inputnumber.component';
+import { InputtextComponent } from './campos/inputtext/inputtext.component';
+import { InputtextrangeComponent } from './campos/inputtextrange/inputtextrange.component';
 import { FormularioComponent } from './formulario/formulario.component';
-import { InputCpfCnpjComponent } from './inputdocumento/inputdocumento.component';
-import { InputmaskComponent } from './inputmask/inputmask.component';
-import { InputnumberComponent } from './inputnumber/inputnumber.component';
-import { InputtextComponent } from './inputtext/inputtext.component';
-import { InputtextrangeComponent } from './inputtextrange/inputtextrange.component';
+import { ListagemComponent } from './listagem/listagem.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TableComponent } from './table/table.component';
 @NgModule({
@@ -23,6 +24,7 @@ import { TableComponent } from './table/table.component';
     InputtextrangeComponent,
     InputCpfCnpjComponent,
     TableComponent,
+    ListagemComponent,
   ],
   imports: [CommonModule, FontAwesomeModule, RouterModule, NgxMaskDirective],
   exports: [
@@ -34,6 +36,7 @@ import { TableComponent } from './table/table.component';
     InputtextrangeComponent,
     InputtextComponent,
     NgxMaskDirective,
+    ListagemComponent,
     TableComponent,
     InputnumberComponent,
   ],

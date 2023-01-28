@@ -1,18 +1,122 @@
-<div class="body">
-  <div class="d-flex mb-3 justify-content-between">
-    <div>
-      <h3 class="title">{{ titulo }}</h3>
+<div class="row">
+  <div
+    *ngFor="let item of lista; let i = index"
+    [ngClass]="item.classe ? item.classe : classe"
+  >
+    <div *ngIf="item.tipo == 'inputtext'">
+      <adv-inputtext
+        [nome]="item.nome"
+        [desabilitar]="item.desabilitar"
+        [valorInicial]="item.valorInicial"
+      ></adv-inputtext>
     </div>
-    <div class="actions-header">
-      <button type="button" class="btn btn-outline-primary disabled">
-        <i class="fa-sharp fa-solid fa-arrow-up-from-bracket"></i>Importar
-      </button>
-      <button type="button" class="btn btn-primary teste">
-        <i class="fa-sharp fa-solid fa-plus"></i>Novo
-      </button>
+
+    <div *ngIf="item.tipo == 'inputnumber'">
+      <adv-inputnumber
+        [nome]="item.nome"
+        [desabilitar]="item.desabilitar"
+        [valorInicial]="item.valorInicial"
+      ></adv-inputnumber>
+    </div>
+
+    <div *ngIf="item.tipo == 'inputmask'">
+      <adv-inputmask
+        [nome]="item.nome"
+        [desabilitar]="item.desabilitar"
+        [valorInicial]="item.valorInicial"
+        [mascara]="item.mascara"
+      ></adv-inputmask>
+    </div>
+
+    <div *ngIf="item.tipo == 'inputdocumento'">
+      <adv-inputdocumento
+        [nome]="item.nome"
+        [desabilitar]="item.desabilitar"
+        [valorInicial]="item.valorInicial"
+      ></adv-inputdocumento>
+    </div>
+
+    <div *ngIf="item.tipo == 'daterange'">
+      <adv-daterange
+        [nome]="item.nome"
+        [desabilitar]="item.desabilitar"
+        [valorInicial]="item.valorInicial"
+        [valorFinal]="item.valorFinal"
+      ></adv-daterange>
+    </div>
+
+    <div *ngIf="item.tipo == 'inputtextrange'">
+      <adv-inputtextrange
+        [nome]="item.nome"
+        [desabilitar]="item.desabilitar"
+        [valorInicial]="item.valorInicial"
+        [valorFinal]="item.valorFinal"
+      ></adv-inputtextrange>
     </div>
   </div>
-  <hr />
-  <ng-content select="[content]"></ng-content>
-  <ng-content select="[actions]"></ng-content>
 </div>
+
+<!-- <div
+    *ngIf="item.tipo == 'inputtext'"
+  >
+    <adv-inputtext
+      [nome]="item.nome"
+      [desabilitar]="item.desabilitar"
+      [valorInicial]="item.valorInicial"
+    ></adv-inputtext>
+  </div>
+
+  <div
+    *ngIf="item.tipo == 'inputnumber'"
+  >
+    <adv-inputnumber
+      [nome]="item.nome"
+      [desabilitar]="item.desabilitar"
+      [valorInicial]="item.valorInicial"
+    ></adv-inputnumber>
+  </div>
+
+  <div
+    *ngIf="item.tipo == 'inputmask'"
+  >
+    <adv-inputmask
+      [nome]="item.nome"
+      [desabilitar]="item.desabilitar"
+      [valorInicial]="item.valorInicial"
+      [mascara]="item.mascara"
+    ></adv-inputmask>
+  </div>
+
+  <div
+    *ngIf="item.tipo == 'inputdocumento'"
+  >
+    <adv-inputdocumento
+      [nome]="item.nome"
+      [desabilitar]="item.desabilitar"
+      [valorInicial]="item.valorInicial"
+    ></adv-inputdocumento>
+  </div>
+
+  <div
+    *ngIf="item.tipo == 'daterange'"
+
+  >
+    <adv-daterange
+      [nome]="item.nome"
+      [desabilitar]="item.desabilitar"
+      [valorInicial]="item.valorInicial"
+      [valorFinal]="item.valorFinal"
+    ></adv-daterange>
+  </div>
+
+  <div
+    *ngIf="item.tipo == 'inputtextrange'"
+
+  >
+    <adv-inputtextrange
+      [nome]="item.nome"
+      [desabilitar]="item.desabilitar"
+      [valorInicial]="item.valorInicial"
+      [valorFinal]="item.valorFinal"
+    ></adv-inputtextrange>
+  </div> -->

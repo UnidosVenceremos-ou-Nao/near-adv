@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./inputtextrange.component.scss'],
 })
 export class InputtextrangeComponent {
-  @Input() titulo = '';
+  @Input() nome = '';
   @Input() identificador: string = '';
   @Input() valorInicial: any = '';
   @Input() valorFinal: any = '';

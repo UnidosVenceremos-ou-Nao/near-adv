@@ -1,4 +1,16 @@
 @import "node_modules/bootstrap/scss/bootstrap";
+
+$px-3: 3px;
+
+$w-100: 100%;
+$w-50: 50%;
+
+:root {
+  --black: #000;
+  --white: #fff;
+  --silver: #c0c0c0;
+}
+
 * {
   font-family: "Montserrat", sans-serif;
   h1 {
@@ -19,7 +31,7 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 a {
-  color: black;
+  color: var(--black);
   font-weight: 600;
   text-decoration: none;
 }
@@ -33,34 +45,30 @@ img .img-login {
 }
 
 input {
-  width: 100%;
+  width: $w-100;
   margin-bottom: 19px;
   padding: 5px 10px;
 }
 
-adv-formulario {
-  label {
-    font-size: 0.9rem;
-    padding-left: 5px;
-    margin-bottom: 2px;
-  }
+label .class_label {
+  font-size: 0.9rem;
+  padding-left: 5px;
+  margin-bottom: 2px;
 }
 
-adv-inputtext {
-  input {
-    border-radius: 7px;
-    border: 1px solid silver;
-  }
+input {
+  border-radius: $px-3;
+  border: 1px solid var(--silver);
 }
 
 .range {
   &.left {
-    border: 1px solid silver;
-    border-radius: 7px 0px 0px 7px;
+    border: 1px solid var(--silver);
+    border-radius: $px-3 0px 0px $px-3;
     border-right: none;
   }
   &.right {
-    border: 1px solid silver;
-    border-radius: 0px 7px 7px 0px;
+    border: 1px solid var(--silver);
+    border-radius: 0px $px-3 $px-3 0px;
   }
 }

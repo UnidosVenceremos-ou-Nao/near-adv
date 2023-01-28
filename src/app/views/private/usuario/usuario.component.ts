@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class UsuarioComponent {
   titulo = 'Listagem de Usuário(s)';
+
+  novo(valor: any) {
+    console.log(valor);
+  }
 }

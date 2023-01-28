@@ -6,9 +6,9 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./daterange.component.scss'],
 })
 export class DaterangeComponent {
-  @Input() titulo = 'Teste';
+  @Input() nome = 'Teste';
   @Input() identificador = 'tst';
-  @Input() dataInicial: any = '';
-  @Input() dataFinal: any = '';
+  @Input() valorInicial: any = '';
+  @Input() valorFinal: any = '';
   @Input() desabilitar: boolean = false;
 }

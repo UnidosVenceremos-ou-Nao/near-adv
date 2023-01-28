@@ -10,5 +10,5 @@ export class InputmaskComponent {
   @Input('valorInicial') valorInicial: any = '';
   @Input('identificador') identificador: string = '';
   @Input('desabilitar') desabilitar: any = false;
-  @Input('mascara') mascara: string = '';
+  @Input('mascara') mascara?: string = '';
 }
