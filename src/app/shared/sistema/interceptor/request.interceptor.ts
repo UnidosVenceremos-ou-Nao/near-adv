@@ -38,7 +38,6 @@ export class RequestInterceptor implements HttpInterceptor {
           headers: headers,
         });
       }
-      debugger;
 
       return next.handle(requestClone).pipe(
         catchError((error) => {

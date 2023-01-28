@@ -53,7 +53,6 @@ export class LoginService {
                 this.usuarioLogadoService.setToken(tokenResult);
                 this.getInfo(user.uid, tokenResult).subscribe({
                   next: (res: ApiReturn) => {
-                    debugger;
                     this.usuarioLogadoService.setUsuario(res.return);
                     this.router.navigate(['/inicio']);
                   },
@@ -114,11 +113,9 @@ export class LoginService {
         this.http.post(`${this.baseUrl}/help/signup`, usuario).subscribe(
           (x) => {
             console.log(x);
-            debugger;
           },
           (e) => {
             console.log(e);
-            debugger;
           }
         );
       });
