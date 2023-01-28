@@ -37,6 +37,7 @@ import { TableComponent } from './table/table.component';
     InputtextComponent,
     NgxMaskDirective,
     ListagemComponent,
+    FontAwesomeModule,
     TableComponent,
     InputnumberComponent,
   ],

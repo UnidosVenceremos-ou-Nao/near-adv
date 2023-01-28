@@ -33,6 +33,12 @@ export class RequestInterceptor implements HttpInterceptor {
           Authorization: `Bearer ${token}`,
         },
       });
+      if (request.url.includes('/help/signup')) {
+        requestClone = request.clone({
+          headers: headers,
+        });
+      }
+      debugger;
 
       return next.handle(requestClone).pipe(
         catchError((error) => {

@@ -6,7 +6,6 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
@@ -23,7 +22,6 @@ import { RequestInterceptor } from './shared/sistema/interceptor/request.interce
     NgbModule,
     AngularFireAuthModule,
     HttpClientModule,
-    FontAwesomeModule,
     AngularFireModule.initializeApp(environment.firebase),
     provideAuth(() => getAuth()),
   ],

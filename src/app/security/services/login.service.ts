@@ -22,12 +22,12 @@ export class LoginService {
   constructor(
     private http: HttpClient,
     public afs: AngularFirestore,
-    public angularFireAuth: AngularFireAuth,
+    public afAuth: AngularFireAuth,
     public router: Router,
     public ngZone: NgZone,
     public usuarioLogadoService: SecurityService
   ) {
-    this.angularFireAuth.authState.subscribe((user: any) => {
+    this.afAuth.authState.subscribe((user: any) => {
       if (user) {
         this.userData = user;
         localStorage.setItem('user', JSON.stringify(this.userData));
@@ -40,18 +40,27 @@ export class LoginService {
   }
 
   SignIn(email: string, password: string) {
-    this.angularFireAuth
+    this.afAuth
       .signInWithEmailAndPassword(email, password)
       .then(async (result) => {
         this.SetUserData(result.user);
 
-        this.angularFireAuth.authState.subscribe((user) => {
+        this.afAuth.authState.subscribe((user) => {
           if (user) {
             result.user
               ?.getIdToken()
               .then((tokenResult) => {
                 this.usuarioLogadoService.setToken(tokenResult);
-                this.router.navigate(['/inicio']);
+                this.getInfo(user.uid, tokenResult).subscribe({
+                  next: (res: ApiReturn) => {
+                    debugger;
+                    this.usuarioLogadoService.setUsuario(res.return);
+                    this.router.navigate(['/inicio']);
+                  },
+                  error: (error: any) => {
+                    console.error(error);
+                  },
+                });
               })
               .catch((error) => {
                 window.alert(Utils.obterStatusRetorno(error.message));
@@ -81,7 +90,7 @@ export class LoginService {
   }
 
   SignOut() {
-    return this.angularFireAuth.signOut().then(() => {
+    return this.afAuth.signOut().then(() => {
       localStorage.clear();
       this.router.navigate(['auth/login']);
     });
@@ -90,29 +99,41 @@ export class LoginService {
   getInfo(uid: string, token: string): Observable<any> {
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${token}`,
+      // Authorization: `Bearer ${token}`,
     });
 
-    return this.http.get(`${this.baseUrl}/auth/${uid}`, { headers: headers });
+    return this.http.get(`${this.baseUrl}/${uid}`, { headers: headers });
   }
 
   signUp(usuario: NovoUsuario) {
-    return this.http.post(`${this.baseUrl}/auth/help/sign-up`, usuario);
+    this.afAuth
+      .createUserWithEmailAndPassword(usuario.email, usuario.senha)
+      .then((data) => {
+        this.SendVerificationMail();
+        usuario.uid = data.user!.uid;
+        this.http.post(`${this.baseUrl}/help/signup`, usuario).subscribe(
+          (x) => {
+            console.log(x);
+            debugger;
+          },
+          (e) => {
+            console.log(e);
+            debugger;
+          }
+        );
+      });
   }
 
-  sendEmailValidation(email: string, password: string) {
-    return this.angularFireAuth
-      .signInWithEmailAndPassword(email, password)
-      .then((result) => {
-        this.angularFireAuth.currentUser.then((user) => {
-          user?.sendEmailVerification();
-          this.SignOut();
-        });
+  SendVerificationMail() {
+    return this.afAuth.currentUser
+      .then((u: any) => u.sendEmailVerification())
+      .then(() => {
+        this.router.navigate(['verify-email-address']);
       });
   }
 
   forgotPassword(email: string) {
-    return this.angularFireAuth
+    return this.afAuth
       .sendPasswordResetEmail(email)
       .then((result) => {})
       .catch((error) => {
@@ -121,7 +142,7 @@ export class LoginService {
   }
 
   changePassword(newPassword: string) {
-    return this.angularFireAuth.currentUser.then((user) => {
+    return this.afAuth.currentUser.then((user) => {
       user?.updatePassword(newPassword);
     });
   }

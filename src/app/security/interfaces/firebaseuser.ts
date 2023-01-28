@@ -18,4 +18,6 @@ export class NovoUsuario {
   nome!: string;
   email!: string;
   senha!: string;
+  uid!: string;
+  celular!: string;
 }

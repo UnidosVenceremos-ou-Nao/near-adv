@@ -9,5 +9,5 @@ export const environment = {
     measurementId: 'G-0SF73ECBQ2',
   },
   production: false,
-  url: 'backend',
+  url: 'http://localhost:8081/auth',
 };
