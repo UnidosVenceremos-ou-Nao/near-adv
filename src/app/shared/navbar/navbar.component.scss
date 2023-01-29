@@ -3,27 +3,41 @@
   height: 100vh;
 
   .sidenav_first_column {
-    border: 1px solid #f0eff4;
-    padding: 15px 5px 0 5px;
+    border: 1px solid var(--border-menu);
+    padding-top: 15px;
+    min-width: 70px;
+    max-width: 70px;
     display: flex;
     justify-content: center;
-    background-color: #f9fbfc;
-    .logo {
+    background-color: var(--background-first-menu);
+
+    .itens {
       width: 50px;
       height: 50px;
-      border: 1px solid #f0eff4;
       border-radius: 5px;
-      background-color: #2c8fe6;
       display: flex;
       justify-content: center;
       align-items: center;
+      color: var(--font);
+      &.logo {
+        border: 1px solid var(--black);
+      }
+      &.modules_icons {
+        margin-bottom: 5px;
+      }
+      &.modules_icons:hover {
+        background-color: #e0e0e0;
+        transition: 0.4s ease-in-out;
+      }
     }
   }
   .sidenav_second_column {
     padding: 1rem;
+    background-color: var(--background-second-menu);
     a {
       span {
         padding-top: 3rem;
+        color: var(--font);
       }
     }
   }
@@ -31,31 +45,55 @@
 
 .nav-link {
   font-weight: 600;
-  color: #3c3f44;
+  color: var(--font);
 }
+
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
-  background-color: #f2f7fa !important;
-  color: black;
+  background-color: var(--background-item-active) !important;
+  color: var(--font);
 }
 
 .disabled {
   cursor: none;
-  color: rgb(179, 179, 179);
+  color: var(--font-disabled);
   font-weight: 400;
 }
-ul {
-  .button_accordion {
-    text-align: left;
-    width: 100%;
-    justify-content: space-between;
-    display: flex;
-    border: none;
-    background-color: transparent;
-    align-items: center;
+
+button {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  border: none;
+  background-color: transparent;
+  align-items: center;
+  justify-content: center;
+  i {
+    color: var(--black);
   }
 }
 
-.hide {
-  display: none;
+::ng-deep .accordion {
+  .accordion-item {
+    background-color: transparent;
+    border: 0px;
+  }
+  .accordion-button:not(.collapsed) {
+    background-color: transparent;
+    padding: 5px 12px;
+    font-weight: 700;
+    color: var(--font);
+  }
+  .accordion-body {
+    border: none;
+    padding: 0;
+  }
+
+  .accordion-button {
+    padding: 5px 12px;
+    box-shadow: none;
+    font-weight: 700;
+    color: var(--font);
+    background-color: transparent;
+  }
 }

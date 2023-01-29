@@ -1,14 +1,32 @@
 @import "node_modules/bootstrap/scss/bootstrap";
+/* Importing Bootstrap SCSS file. */
+@import "bootstrap/scss/bootstrap";
 
 $px-3: 3px;
-
 $w-100: 100%;
 $w-50: 50%;
 
+// :root {
+//   --black: #121927;
+//   --white: #fff;
+//   --silver: #c0c0c0;
+
+//   --border-menu: #121927;
+//   --background-first-menu: #121927;
+//   --background-second-menu: #121927;
+//   --background-item-active: #313642;
+//   --font: #f2f7fa;
+//   --font-disabled: #cbcbcb;
+// }
 :root {
-  --black: #000;
+  --black: #121927;
   --white: #fff;
   --silver: #c0c0c0;
+  --border-menu: #f0eff4;
+  --background-first-menu: #f0eff4;
+  --font-disabled: #b3b3b3;
+  --font-link: #3c3f44;
+  --font-link-active: #f2f7fa;
 }
 
 * {

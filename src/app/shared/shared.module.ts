@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 import { DaterangeComponent } from './campos/daterange/daterange.component';
 import { InputCpfCnpjComponent } from './campos/inputdocumento/inputdocumento.component';
@@ -26,11 +27,18 @@ import { TableComponent } from './table/table.component';
     TableComponent,
     ListagemComponent,
   ],
-  imports: [CommonModule, FontAwesomeModule, RouterModule, NgxMaskDirective],
+  imports: [
+    CommonModule,
+    FontAwesomeModule,
+    RouterModule,
+    NgxMaskDirective,
+    NgbAccordionModule,
+  ],
   exports: [
     NavbarComponent,
     FormularioComponent,
     DaterangeComponent,
+    NgbAccordionModule,
     InputmaskComponent,
     InputCpfCnpjComponent,
     InputtextrangeComponent,

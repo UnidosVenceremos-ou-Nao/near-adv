@@ -1,6 +1,18 @@
 <div class="d-flex align-items-stretch sidenav">
   <div class="sidenav_first_column">
-    <div class="logo">image</div>
+    <div class="d-flex flex-column">
+      <div class="itens logo">image</div>
+      <hr />
+      <div class="itens modules_icons"><button>icone</button></div>
+      <div class="itens modules_icons"><button>icone</button></div>
+      <div class="itens modules_icons"><button>icone</button></div>
+      <div class="itens modules_icons"><button>icone</button></div>
+      <div class="itens modules_icons mt-auto">
+        <button>
+          <i class="fa-solid fa-gear fa-2xl"></i>
+        </button>
+      </div>
+    </div>
   </div>
   <div class="sidenav_second_column w-100">
     <a
@@ -9,31 +21,24 @@
       <span class="fs-4">Sidebar</span>
     </a>
     <hr />
-
-    <ul *ngFor="let e of navs" class="nav nav-pills flex-column mt-4 mb-auto">
-      <div class="d-flex justify-content-between">
-        <button class="button_accordion" (click)="e.ativo = !e.ativo">
-          <span>{{ e.titulo }}</span>
-          <i *ngIf="e.ativo" class="fa-solid fa-minus"></i>
-          <i *ngIf="!e.ativo" class="fa-solid fa-plus"></i>
-        </button>
-      </div>
-
-      <li
-        class="nav-item"
-        [ngClass]="!e.ativo ? 'hide' : ''"
-        *ngFor="let item of e.children"
-      >
-        <a
-          class="nav-link"
-          [routerLink]="[item.path]"
-          [class.disabled]="item.disabled ? false : true"
-          [routerLinkActive]="['active']"
-          aria-current="page"
-        >
-          {{ item.nome }}
-        </a>
-      </li>
-    </ul>
+    <ngb-accordion #acc="ngbAccordion" *ngFor="let e of navs">
+      <ngb-panel [title]="e.titulo">
+        <ng-template ngbPanelContent>
+          <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item" *ngFor="let item of e.children">
+              <a
+                class="nav-link"
+                [routerLink]="[item.path]"
+                [class.disabled]="item.disabled ? false : true"
+                [routerLinkActive]="['active']"
+                aria-current="page"
+              >
+                {{ item.nome }}
+              </a>
+            </li>
+          </ul>
+        </ng-template>
+      </ngb-panel>
+    </ngb-accordion>
   </div>
 </div>
