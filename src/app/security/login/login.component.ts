@@ -1,9 +1,8 @@
-import { NovoUsuario } from './../interfaces/firebaseuser';
-import { LoginService } from './../services/login.service';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SecurityService } from '../services/security.service';
+import { LoginService } from './../services/login.service';
 @Component({
   selector: 'sdv-login',
   templateUrl: './login.component.html',
@@ -26,17 +25,17 @@ export class LoginComponent {
   }
 
   acessar() {
-    // let email = this.formulario.controls['email'].value;
-    // let password = this.formulario.controls['senha'].value;
+    let email = this.formulario.controls['email'].value;
+    let password = this.formulario.controls['senha'].value;
 
-    // this.loginService.SignIn(email, password);
+    this.loginService.SignIn(email, password);
 
-    let usuario: NovoUsuario = new NovoUsuario();
+    // let usuario: NovoUsuario = new NovoUsuario();
 
-    usuario.email = 'paulomesquita0@gmail.com';
-    usuario.senha = '123456';
-    usuario.celular = '123456';
+    // usuario.email = 'paulomesquita0@gmail.com';
+    // usuario.senha = '123456';
+    // usuario.celular = '123456';
 
-    this.loginService.signUp(usuario);
+    // this.loginService.signUp(usuario);
   }
 }

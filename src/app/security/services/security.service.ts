@@ -9,6 +9,7 @@ import { Perfil } from '../interfaces/perfil';
 export class SecurityService {
   public loggedUser = new BehaviorSubject<string>('');
   public token = new BehaviorSubject<string>('');
+
   constructor() {}
 
   USUARIO_LOCAL_HISTORY = 'USUARIO';
@@ -19,6 +20,7 @@ export class SecurityService {
   }
 
   public setToken(bearer: any) {
+    debugger;
     this.token.next(bearer);
   }
 
@@ -61,6 +63,6 @@ export class SecurityService {
   }
 
   removeToken() {
-    localStorage.removeItem(this.TOKEN_LOCAL_HISTORY);
+    this.token.next('');
   }
 }

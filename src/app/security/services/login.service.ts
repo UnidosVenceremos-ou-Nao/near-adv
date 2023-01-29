@@ -25,7 +25,7 @@ export class LoginService {
     public afAuth: AngularFireAuth,
     public router: Router,
     public ngZone: NgZone,
-    public usuarioLogadoService: SecurityService
+    public securityService: SecurityService
   ) {
     this.afAuth.authState.subscribe((user: any) => {
       if (user) {
@@ -50,10 +50,10 @@ export class LoginService {
             result.user
               ?.getIdToken()
               .then((tokenResult) => {
-                this.usuarioLogadoService.setToken(tokenResult);
+                this.securityService.setToken(tokenResult);
                 this.getInfo(user.uid, tokenResult).subscribe({
                   next: (res: ApiReturn) => {
-                    this.usuarioLogadoService.setUsuario(res.return);
+                    this.securityService.setUsuario(res.return);
                     this.router.navigate(['/inicio']);
                   },
                   error: (error: any) => {
@@ -98,7 +98,7 @@ export class LoginService {
   getInfo(uid: string, token: string): Observable<any> {
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      // Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     });
 
     return this.http.get(`${this.baseUrl}/${uid}`, { headers: headers });
@@ -111,11 +111,11 @@ export class LoginService {
         this.SendVerificationMail();
         usuario.uid = data.user!.uid;
         this.http.post(`${this.baseUrl}/help/signup`, usuario).subscribe(
-          (x) => {
-            console.log(x);
+          (data) => {
+            console.log(data);
           },
-          (e) => {
-            console.log(e);
+          (error) => {
+            console.log(error);
           }
         );
       });

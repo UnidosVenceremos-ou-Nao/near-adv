@@ -15,26 +15,62 @@ import {
 export class NavbarComponent {
   navs = [
     {
-      nome: 'Início',
-      path: 'inicio',
-      icone: 'fas fa-user',
-      disabled: true,
-    },
-    {
-      nome: 'Usuário',
-      path: 'usuario',
-      icone: 'fas fa-user',
-      disabled: true,
-    },
-    {
-      nome: 'Teste',
-      path: 'teste',
-      icone: 'fas fa-user',
-      disabled: false,
+      titulo: 'Dashboard',
+      ativo: false,
       children: [
         {
-          path: 'fulano',
-          nome: 'Clientes',
+          nome: 'Início',
+          path: 'inicio',
+          icone: 'fas fa-user',
+          disabled: true,
+        },
+        {
+          nome: 'Usuário',
+          path: 'usuario',
+          icone: 'fas fa-user',
+          disabled: true,
+        },
+        {
+          nome: 'Teste',
+          path: 'teste',
+          icone: 'fas fa-user',
+          disabled: false,
+          children: [
+            {
+              path: 'fulano',
+              nome: 'Clientes',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      titulo: 'Clientes',
+      ativo: true,
+      children: [
+        {
+          nome: 'Início',
+          path: 'inicio1',
+          icone: 'fas fa-user',
+          disabled: true,
+        },
+        {
+          nome: 'Usuário',
+          path: 'usuario1',
+          icone: 'fas fa-user',
+          disabled: true,
+        },
+        {
+          nome: 'Teste',
+          path: 'teste2',
+          icone: 'fas fa-user',
+          disabled: false,
+          children: [
+            {
+              path: 'fulano',
+              nome: 'Clientes',
+            },
+          ],
         },
       ],
     },
