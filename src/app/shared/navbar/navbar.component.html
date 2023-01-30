@@ -1,24 +1,32 @@
 <div class="d-flex align-items-stretch sidenav">
   <div class="sidenav_first_column">
     <div class="d-flex flex-column">
-      <div class="itens logo">image</div>
+      <a class="itens logo"
+        ><img src="../../../assets/images/nearhub2.png" alt=""
+      /></a>
+
       <hr />
-      <div class="itens modules_icons"><button>icone</button></div>
-      <div class="itens modules_icons"><button>icone</button></div>
-      <div class="itens modules_icons"><button>icone</button></div>
-      <div class="itens modules_icons"><button>icone</button></div>
-      <div class="itens modules_icons mt-auto">
-        <button>
-          <i class="fa-solid fa-gear fa-2xl"></i>
-        </button>
-      </div>
+
+      <button
+        class="itens modules_icons"
+        *ngFor="let item of modulos"
+        [ngClass]="item.ativo ? '' : 'disabled'"
+      >
+        <i class="fa-solid fa-xl" [ngClass]="item.icone"></i>
+      </button>
+
+      <hr class="mt-auto" />
+      <button class="itens modules_icons">
+        <i class="fa-solid fa-gears fa-xl"></i>
+      </button>
     </div>
   </div>
+
   <div class="sidenav_second_column w-100">
     <a
       class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none"
     >
-      <span class="fs-4">Sidebar</span>
+      <span class="fs-4">Near Hub</span>
     </a>
     <hr />
     <ngb-accordion #acc="ngbAccordion" *ngFor="let e of navs">
@@ -29,7 +37,7 @@
               <a
                 class="nav-link"
                 [routerLink]="[item.path]"
-                [class.disabled]="item.disabled ? false : true"
+                [class.disabled]="item.ativo ? false : true"
                 [routerLinkActive]="['active']"
                 aria-current="page"
               >

@@ -19,6 +19,8 @@ export class NavbarComponent {
   constructor(library: FaIconLibrary) {
     library.addIconPacks(fas, fab);
   }
+  imageLogo: string = 'src/assets/images/nearhub.png';
+
   navs = [
     {
       titulo: 'Dashboard',
@@ -28,19 +30,19 @@ export class NavbarComponent {
           nome: 'Início',
           path: 'inicio',
           icone: 'fas fa-user',
-          disabled: true,
+          ativo: true,
         },
         {
           nome: 'Usuário',
           path: 'usuario',
           icone: 'fas fa-user',
-          disabled: true,
+          ativo: true,
         },
         {
           nome: 'Teste',
           path: 'teste',
           icone: 'fas fa-user',
-          disabled: false,
+          ativo: false,
           children: [
             {
               path: 'fulano',
@@ -58,19 +60,19 @@ export class NavbarComponent {
           nome: 'Início',
           path: 'inicio1',
           icone: 'fas fa-user',
-          disabled: true,
+          ativo: true,
         },
         {
           nome: 'Usuário',
           path: 'usuario1',
           icone: 'fas fa-user',
-          disabled: true,
+          ativo: true,
         },
         {
           nome: 'Teste',
           path: 'teste2',
           icone: 'fas fa-user',
-          disabled: false,
+          ativo: false,
           children: [
             {
               path: 'fulano',
@@ -79,6 +81,19 @@ export class NavbarComponent {
           ],
         },
       ],
+    },
+  ];
+
+  modulos = [
+    {
+      icone: 'fa-scale-balanced',
+      ativo: true,
+      tooltip: 'TESTE 1',
+    },
+    {
+      icone: 'fa-camera-retro',
+      ativo: false,
+      tooltip: 'TESTE 2',
     },
   ];
   @Input() isExpanded: boolean = true;

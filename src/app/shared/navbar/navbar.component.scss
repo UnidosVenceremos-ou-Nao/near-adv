@@ -14,13 +14,18 @@
     .itens {
       width: 50px;
       height: 50px;
-      border-radius: 5px;
+      border-radius: 12px;
       display: flex;
       justify-content: center;
       align-items: center;
       color: var(--font);
       &.logo {
         border: 1px solid var(--black);
+        img {
+          border-radius: 12px;
+          width: 50px;
+          height: 50px;
+        }
       }
       &.modules_icons {
         margin-bottom: 5px;
@@ -31,6 +36,7 @@
       }
     }
   }
+
   .sidenav_second_column {
     padding: 1rem;
     background-color: var(--background-second-menu);
@@ -54,12 +60,6 @@
   color: var(--font);
 }
 
-.disabled {
-  cursor: none;
-  color: var(--font-disabled);
-  font-weight: 400;
-}
-
 button {
   text-align: center;
   width: 100%;
@@ -68,8 +68,19 @@ button {
   background-color: transparent;
   align-items: center;
   justify-content: center;
-  i {
-    color: var(--black);
+  &.disabled {
+    cursor: default;
+    i {
+      color: var(--font-disabled);
+    }
+  }
+}
+
+ul li a {
+  &.disabled {
+    cursor: none;
+    color: var(--font-disabled);
+    font-weight: 400;
   }
 }
 
