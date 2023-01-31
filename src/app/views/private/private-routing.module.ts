@@ -1,5 +1,3 @@
-import { UsuarioComponent } from './usuario/usuario.component';
-import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PrivateComponent } from './private.component';
@@ -7,7 +5,7 @@ import { PrivateComponent } from './private.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'inicio',
+    redirectTo: 'adv',
     pathMatch: 'full',
   },
   {
@@ -15,12 +13,9 @@ const routes: Routes = [
     component: PrivateComponent,
     children: [
       {
-        path: 'inicio',
-        component: HomeComponent,
-      },
-      {
-        path: 'usuario',
-        component: UsuarioComponent,
+        path: 'adv',
+        loadChildren: () =>
+          import('./adv/adv-system.module').then((m) => m.AdvSystemModule),
       },
     ],
   },

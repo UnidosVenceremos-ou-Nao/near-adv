@@ -9,7 +9,7 @@
 
       <button
         class="itens modules_icons"
-        *ngFor="let item of modulos"
+        *ngFor="let item of menu"
         [ngClass]="item.ativo ? '' : 'disabled'"
       >
         <i class="fa-solid fa-xl" [ngClass]="item.icone"></i>
@@ -29,8 +29,8 @@
       <span class="fs-4">Near Hub</span>
     </a>
     <hr />
-    <ngb-accordion #acc="ngbAccordion" *ngFor="let e of navs">
-      <ngb-panel [title]="e.titulo">
+    <ngb-accordion #acc="ngbAccordion" *advValidateModule="let e of menu">
+      <!-- <ngb-panel   [title]="e.titulo">
         <ng-template ngbPanelContent>
           <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item" *ngFor="let item of e.children">
@@ -46,7 +46,7 @@
             </li>
           </ul>
         </ng-template>
-      </ngb-panel>
+      </ngb-panel> -->
     </ngb-accordion>
   </div>
 </div>
