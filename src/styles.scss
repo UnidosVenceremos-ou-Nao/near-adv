@@ -6,31 +6,40 @@ $px-3: 3px;
 $w-100: 100%;
 $w-50: 50%;
 
+// :root {
+//   --black: #121927;
+//   --white: #fff;
+//   --silver: #c0c0c0;
+
+//   --border-menu: #121927;
+//   --border-menu-first-menu: #3d436c;
+
+//   --background-first-menu: #121927;
+//   --background-second-menu: #121927;
+//   --background-item-active: #313642;
+//   --background-content: #1f2f4e;
+
+//   --font: #f2f7fa;
+//   --font-disabled: #cbcbcb;
+// }
 :root {
-  --black: #121927;
+  --black: #10141d;
   --white: #fff;
   --silver: #c0c0c0;
 
-  --border-menu: #121927;
-  --border-menu-first-menu: #3d436c;
-  --background-first-menu: #121927;
-  --background-second-menu: #121927;
-  --background-item-active: #313642;
-  --background-content: #1f2f4e;
-  --font: #f2f7fa;
-  --font-disabled: #cbcbcb;
+  --color-hr: #c3c3c3;
+
+  --border-menu: #dbdbdb;
+  --border-button: #dbdbdb;
+
+  --background-first-menu: #fbfbfb;
+  --background-second-menu: #fff;
+  --background-button: #fff;
+  --background-content: #fff;
+
+  --font: #10141d;
+  --font-disabled: #b3b3b3;
 }
-// :root {
-//   --black: #10141d;
-//   --white: #fff;
-//   --silver: #c0c0c0;
-//   --border-menu: #dbdbdb;
-//   --background-first-menu: #fbfbfb;
-//   --background-second-menu: #fff;
-//   --font-disabled: #b3b3b3;
-//   --font-link: #3c3f44;
-//   --font-link-active: #f2f7fa;
-// }
 
 * {
   font-family: "Poppins", sans-serif;
@@ -90,11 +99,11 @@ input {
 }
 
 .near_botao {
-  background-color: var(--background-first-menu);
+  background-color: var(--background-button);
   padding: 10px 35px;
   color: var(--font);
   border-radius: 5px;
-  border: 1px solid var(--border-menu-first-menu);
+  border: 1px solid var(--border-button);
   align-items: center;
   display: flex;
   i {
