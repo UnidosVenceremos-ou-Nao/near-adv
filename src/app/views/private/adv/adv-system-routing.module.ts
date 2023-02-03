@@ -13,9 +13,6 @@ const routes: Routes = [
   {
     path: '',
     component: AdvSystemComponent,
-    data: {
-      module: 'adv',
-    },
     children: [
       {
         path: 'inicio',

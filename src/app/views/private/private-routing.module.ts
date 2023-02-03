@@ -10,6 +10,7 @@ const routes: Routes = [
   },
   {
     path: '',
+    data: { modulo: 'adv' },
     component: PrivateComponent,
     children: [
       {

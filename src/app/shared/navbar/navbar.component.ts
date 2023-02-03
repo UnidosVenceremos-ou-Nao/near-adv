@@ -5,7 +5,7 @@ import {
   Input,
   Output,
 } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { RouterState, ActivatedRoute } from '@angular/router';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { LISTA_MENU } from './../menulista';
 
@@ -16,22 +16,29 @@ import { LISTA_MENU } from './../menulista';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarComponent {
-  constructor(library: FaIconLibrary, protected activeRoute: ActivatedRoute) {
-    // library.addIconPacks(fas, fab);
-  }
   imageLogo: string = 'src/assets/images/nearhub.png';
 
-  menu = LISTA_MENU;
+  menu = [];
 
   @Input() isExpanded: boolean = true;
   @Output() toggleSidebar: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  handleSidebarToggle = () => this.toggleSidebar.emit(!this.isExpanded);
+  constructor(library: FaIconLibrary, protected route: ActivatedRoute) {
+    // library.addIconPacks(fas, fab);
+    console.log(route.snapshot.data['modulo']);
 
-  ngOnInit() {
-    let a = this.activeRoute.snapshot.params;
     debugger;
+    this.teste();
   }
 
-  getModuloMenu() {}
+  handleSidebarToggle = () => this.toggleSidebar.emit(!this.isExpanded);
+
+  ngOnInit() {}
+
+  teste() {
+    const lista = LISTA_MENU;
+    lista.forEach((x) => {
+      debugger;
+    });
+  }
 }
