@@ -1,6 +1,8 @@
 .sidenav {
   min-width: 21vw;
   height: 100vh;
+  border: 1px solid var(--border-menu);
+  box-shadow: 2px 0px 4px var(--border-menu);
 
   .sidenav_first_column {
     border-right: 1px solid var(--border-menu);
@@ -70,8 +72,8 @@ button {
   justify-content: center;
   &.disabled {
     cursor: default;
-    i {
-      color: var(--font-disabled);
+    fa-icon {
+      color: var(--font-disabled) !important;
     }
   }
 }
@@ -89,12 +91,20 @@ ul li a {
     background-color: transparent;
     border: 0px;
   }
+
   .accordion-button:not(.collapsed) {
     background-color: transparent;
     padding: 5px 12px;
-    font-weight: 700;
+    font-weight: 400;
+    font-size: 0.9rem;
     color: var(--font);
   }
+
+  .accordion-button {
+    font-size: 0.9rem;
+    font-weight: 400 !important;
+  }
+
   .accordion-body {
     border: none;
     padding: 0;

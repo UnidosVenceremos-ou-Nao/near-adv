@@ -11,24 +11,24 @@ export const LISTA_MENU = [
         children: [
           {
             nome: 'Início',
-            path: 'inicio',
+            path: 'adv/inicio',
             icone: 'user',
             ativo: true,
           },
           {
             nome: 'Usuário',
-            path: 'usuario',
+            path: 'adv/usuario',
             icone: 'user',
             ativo: true,
           },
           {
             nome: 'Teste',
-            path: 'teste',
+            path: 'adv/teste',
             icone: 'user',
             ativo: false,
             children: [
               {
-                path: 'fulano',
+                path: 'adv/fulano',
                 nome: 'Clientes',
               },
             ],

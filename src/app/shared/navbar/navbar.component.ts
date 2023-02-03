@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
 import { LISTA_MENU } from './../menulista';
 
 @Component({
@@ -51,7 +52,6 @@ export class NavbarComponent {
         this.menu.push(...obj.itensMenu);
       }
     }
-    console.log(this.modulos);
     console.log(this.menu);
   }
 }

@@ -1,4 +1,5 @@
 <div class="d-flex align-items-stretch sidenav">
+  <!-- PRIMEIRA COLUNA -->
   <div class="sidenav_first_column">
     <div class="d-flex flex-column">
       <a class="itens logo"
@@ -12,15 +13,17 @@
         *ngFor="let item of modulos"
         [ngClass]="item.ativo ? '' : 'disabled'"
       >
-        <fa-icon [icon]="['fas', item.icone]"></fa-icon>
+        <fa-icon [icon]="['fas', item.icone]" size="xl"></fa-icon>
       </button>
 
       <hr class="mt-auto" />
       <button class="itens modules_icons">
-        <fa-icon [icon]="['fas', 'gears']" size="2x"></fa-icon>
+        <fa-icon [icon]="['fas', 'gears']" size="xl"></fa-icon>
       </button>
     </div>
   </div>
+
+  <!-- SEGUNDA COLUNA -->
   <div class="sidenav_second_column w-100">
     <a
       class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none"
@@ -36,6 +39,7 @@
               <a
                 class="nav-link"
                 [routerLink]="[item.path]"
+                [relativeTo]="route"
                 [class.disabled]="item.ativo ? false : true"
                 [routerLinkActive]="['active']"
                 aria-current="page"
