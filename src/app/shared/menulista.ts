@@ -1,7 +1,7 @@
 export const LISTA_MENU = [
   {
     modulo: 'adv',
-    icone: 'fa-scale-balanced',
+    icone: 'scale-balanced',
     ativo: true,
     tooltip: 'TESTE 1',
     itensMenu: [
@@ -12,19 +12,19 @@ export const LISTA_MENU = [
           {
             nome: 'Início',
             path: 'inicio',
-            icone: 'fas fa-user',
+            icone: 'user',
             ativo: true,
           },
           {
             nome: 'Usuário',
             path: 'usuario',
-            icone: 'fas fa-user',
+            icone: 'user',
             ativo: true,
           },
           {
             nome: 'Teste',
             path: 'teste',
-            icone: 'fas fa-user',
+            icone: 'user',
             ativo: false,
             children: [
               {
@@ -39,7 +39,7 @@ export const LISTA_MENU = [
   },
   {
     modulo: 'outro',
-    icone: 'fa-camera-retro',
+    icone: 'camera-retro',
     ativo: false,
     tooltip: 'TESTE 2',
     itensMenu: [],

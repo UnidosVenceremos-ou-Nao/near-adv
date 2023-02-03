@@ -5,8 +5,10 @@ import {
   Input,
   Output,
 } from '@angular/core';
-import { RouterState, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { fas } from '@fortawesome/free-solid-svg-icons';
 import { LISTA_MENU } from './../menulista';
 
 @Component({
@@ -16,29 +18,40 @@ import { LISTA_MENU } from './../menulista';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarComponent {
-  imageLogo: string = 'src/assets/images/nearhub.png';
-
-  menu = [];
-
   @Input() isExpanded: boolean = true;
   @Output() toggleSidebar: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  constructor(library: FaIconLibrary, protected route: ActivatedRoute) {
-    // library.addIconPacks(fas, fab);
-    console.log(route.snapshot.data['modulo']);
+  imageLogo: string = 'src/assets/images/nearhub.png';
 
-    debugger;
-    this.teste();
+  menu: any = [];
+  modulos: any;
+  moduloAtivo = '';
+
+  constructor(library: FaIconLibrary, protected route: ActivatedRoute) {
+    library.addIconPacks(fas, fab);
+
+    this.moduloAtivo = route.snapshot.data['modulo'];
+    this.getMenu();
   }
 
   handleSidebarToggle = () => this.toggleSidebar.emit(!this.isExpanded);
 
   ngOnInit() {}
 
-  teste() {
+  getMenu() {
     const lista = LISTA_MENU;
-    lista.forEach((x) => {
-      debugger;
+
+    this.modulos = lista.filter((obj) => {
+      const { itensMenu, ...newList } = obj;
+      return newList;
     });
+
+    for (const obj of lista) {
+      if (obj.modulo === this.moduloAtivo) {
+        this.menu.push(...obj.itensMenu);
+      }
+    }
+    console.log(this.modulos);
+    console.log(this.menu);
   }
 }
