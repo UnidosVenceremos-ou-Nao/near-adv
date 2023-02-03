@@ -5,7 +5,7 @@
   box-shadow: 2px 0px 4px var(--border-menu);
 
   .sidenav_first_column {
-    border-right: 1px solid var(--border-menu);
+    border-right: 1px solid var(--border-menu-first-menu);
     padding-top: 15px;
     min-width: 70px;
     max-width: 70px;
@@ -103,6 +103,7 @@ ul li a {
   .accordion-button {
     font-size: 0.9rem;
     font-weight: 400 !important;
+    padding-left: 0 !important;
   }
 
   .accordion-body {
