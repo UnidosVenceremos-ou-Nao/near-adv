@@ -1,4 +1,4 @@
-export interface Input {
+export interface Campo {
   nome: string;
   tipo: TipoInput;
   desabilitar: boolean;

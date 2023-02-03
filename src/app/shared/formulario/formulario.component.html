@@ -1,12 +1,12 @@
 <div class="d-flex mb-3 justify-content-between sticky">
   <div>
-    <h4 class="title">asdasdasd</h4>
+    <h4 class="title">{{ titulo }}</h4>
   </div>
   <div class="actions-header"></div>
 </div>
 <div class="row">
   <div
-    *ngFor="let item of lista; let i = index"
+    *ngFor="let item of listaCampos; let i = index"
     [ngClass]="item.classe ? item.classe : classe"
   >
     <div *ngIf="item.tipo == 'inputtext'">
