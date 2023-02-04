@@ -5,6 +5,7 @@
       type="text"
       [id]="identificador"
       class="range left"
+      (input)="onChangeInicial($event)"
       [disabled]="desabilitar"
       [(value)]="valorInicial"
     />
@@ -12,6 +13,7 @@
   <div class="w-50 pl-0">
     <input
       type="text"
+      (input)="onChangeFinal($event)"
       class="range right"
       [class.disabled]="desabilitar"
       [disabled]="desabilitar"

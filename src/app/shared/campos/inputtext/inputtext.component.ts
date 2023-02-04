@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'near-text',
@@ -10,4 +10,10 @@ export class InputTextComponent {
   @Input('valorInicial') valorInicial: any = '';
   @Input('identificador') identificador: string = '';
   @Input('desabilitar') desabilitar: any = false;
+
+  @Output() valor = new EventEmitter();
+
+  onChange(item: any) {
+    this.valor.emit(item.target.value);
+  }
 }

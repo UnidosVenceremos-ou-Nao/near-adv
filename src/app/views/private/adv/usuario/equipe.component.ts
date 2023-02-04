@@ -1,3 +1,4 @@
+import { Equipe } from './servico/equipe';
 import { Component } from '@angular/core';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { fab } from '@fortawesome/free-brands-svg-icons';
@@ -14,9 +15,10 @@ import { SharedModule } from '../../../../shared/shared.module';
 export class EquipeComponent {
   titulo = 'Equipe';
   operacao = 'listagem';
+  filtro: Equipe = new Equipe();
 
   opcoesCargo = [
-    { label: 'Item 1', value: 'item-1' },
+    { label: 'Advogado', value: 'Advogado' },
     { label: 'Item 2', value: 'item-2' },
     { label: 'Item 3', value: 'item-3' },
   ];
@@ -27,5 +29,9 @@ export class EquipeComponent {
 
   novo(valor: any) {
     this.operacao = 'cadastro';
+  }
+
+  teste(valor: any) {
+    console.log(valor);
   }
 }

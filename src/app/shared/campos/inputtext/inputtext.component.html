@@ -2,6 +2,7 @@
 <input
   class="inputtext"
   type="text"
+  (input)="onChange($event)"
   [(value)]="valorInicial"
   [id]="identificador"
   [(disabled)]="desabilitar"

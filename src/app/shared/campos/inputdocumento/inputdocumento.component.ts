@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'near-documento',
@@ -11,4 +11,10 @@ export class InputCpfCnpjComponent {
   @Input('identificador') identificador: string = '';
   @Input('desabilitar') desabilitar: any = false;
   @Input('mascara') mascara: string = '';
+
+  @Output() valor = new EventEmitter();
+
+  onChange(item: any) {
+    this.valor.emit(item.target.value);
+  }
 }

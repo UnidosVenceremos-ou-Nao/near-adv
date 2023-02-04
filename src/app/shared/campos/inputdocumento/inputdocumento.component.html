@@ -3,6 +3,7 @@
   type="text"
   [(value)]="valorInicial"
   [id]="identificador"
+  (input)="onChange($event)"
   [(disabled)]="desabilitar"
   mask="000.000.000-00||00.000.000/0000-00"
 />
