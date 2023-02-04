@@ -100,19 +100,7 @@ label .class_label {
 }
 
 .near_botao {
-  &.near_primary {
-    background-color: var(--background-button-primary);
-    color: var(--font-primary);
-    border: 1px solid var(--border-button);
-  }
-
-  &.near_secondary {
-    background-color: var(--background-button-secondary);
-    color: var(--font-secondary);
-    border: 1px solid var(--font-secondary);
-  }
-
-  padding: 10px 35px;
+  padding: 8px 35px;
   border-radius: 5px;
   align-items: center;
   display: flex;
@@ -123,6 +111,18 @@ label .class_label {
     &.near_secondary {
     }
     margin-right: 10px;
+  }
+
+  &.near_primary {
+    background-color: var(--background-button-primary);
+    color: var(--font-primary);
+    border: 1px solid var(--border-button);
+  }
+
+  &.near_secondary {
+    background-color: var(--background-button-secondary);
+    color: var(--font-secondary);
+    border: 1px solid var(--font-secondary);
   }
 }
 .actions-header {
