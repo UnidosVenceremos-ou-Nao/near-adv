@@ -56,5 +56,6 @@ export class NavbarComponent {
         this.menu.push(...obj.itensMenu);
       }
     }
+    debugger;
   }
 }
