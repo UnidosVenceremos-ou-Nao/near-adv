@@ -5,11 +5,6 @@ import { PrivateComponent } from './private.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'adv',
-    pathMatch: 'full',
-  },
-  {
-    path: '',
     component: PrivateComponent,
     children: [
       {
@@ -17,6 +12,11 @@ const routes: Routes = [
         data: { modulo: 'adv' },
         loadChildren: () =>
           import('./adv/adv-system.module').then((m) => m.AdvSystemModule),
+      },
+      {
+        path: 'admin',
+        loadChildren: () =>
+          import('./admin/admin.routes').then((m) => m.adminRoutes),
       },
     ],
   },
