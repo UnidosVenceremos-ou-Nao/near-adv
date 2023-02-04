@@ -5,6 +5,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 import { DaterangeComponent } from './campos/daterange/daterange.component';
+import { DropdownComponent } from './campos/dropdown/dropdown.component';
 import { InputCpfCnpjComponent } from './campos/inputdocumento/inputdocumento.component';
 import { InputMaskComponent } from './campos/inputmask/inputmask.component';
 import { InputNumberComponent } from './campos/inputnumber/inputnumber.component';
@@ -16,40 +17,40 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { TableComponent } from './table/table.component';
 @NgModule({
   declarations: [
-    NavbarComponent,
-    FormularioComponent,
     DaterangeComponent,
-    InputTextComponent,
-    InputNumberComponent,
-    InputMaskComponent,
-    InputtextrangeComponent,
+    DropdownComponent,
+    FormularioComponent,
     InputCpfCnpjComponent,
-    TableComponent,
+    InputMaskComponent,
+    InputNumberComponent,
+    InputTextComponent,
+    InputtextrangeComponent,
     ListagemComponent,
+    NavbarComponent,
+    TableComponent,
   ],
   imports: [
     CommonModule,
-    FontAwesomeModule,
     RouterModule,
+    FontAwesomeModule,
     NgxMaskDirective,
     NgbAccordionModule,
   ],
   exports: [
     CommonModule,
     DaterangeComponent,
+    DropdownComponent,
     FormularioComponent,
+    InputCpfCnpjComponent,
     InputNumberComponent,
     InputMaskComponent,
-    InputCpfCnpjComponent,
     InputtextrangeComponent,
     InputTextComponent,
     NavbarComponent,
     ListagemComponent,
     TableComponent,
-
     FontAwesomeModule,
     NgbAccordionModule,
-
     NgxMaskDirective,
   ],
   providers: [provideNgxMask()],

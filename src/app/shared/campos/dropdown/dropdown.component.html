@@ -1,0 +1,10 @@
+<label class="class_label">{{ nome }}</label>
+<select
+  (change)="onSelectionChange($event)"
+  [disabled]="ativo || items.length == 0"
+>
+  <option [value]="null">{{ items.length ? "" : placeholder }}</option>
+  <option *ngFor="let item of items" [value]="item.value">
+    {{ item.label }}
+  </option>
+</select>

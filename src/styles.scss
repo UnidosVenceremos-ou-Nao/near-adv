@@ -73,20 +73,18 @@ img .img-login {
   height: 100px;
 }
 
-input {
+input,
+select {
   width: $w-100;
   margin-bottom: 19px;
   padding: 5px 10px;
+  border-radius: $px-3;
+  border: 1px solid var(--silver);
 }
 
 label .class_label {
   padding-left: 5px;
   margin-bottom: 2px;
-}
-
-input {
-  border-radius: $px-3;
-  border: 1px solid var(--silver);
 }
 
 .range {
