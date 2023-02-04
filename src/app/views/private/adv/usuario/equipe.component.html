@@ -1,27 +1,24 @@
-<adv-listagem
+<near-listagem
   *ngIf="operacao == 'listagemasda'"
   [titulo]="titulo"
   (novoEvent)="novo($event)"
-></adv-listagem>
+></near-listagem>
 
-<adv-formulario
+<near-formulario
   *ngIf="operacao == 'cadastro' || operacao == 'listagem'"
   [titulo]="titulo"
   [operacao]="operacao"
 >
   <div class="row">
     <div class="col-lg-4 col-md-6 col-sm-12">
-      <adv-inputtext nome="Nome Completo" identificador="nome"></adv-inputtext>
+      <near-text nome="Nome Completo" identificador="nome"></near-text>
     </div>
     <div class="col-lg-4 col-md-6 col-sm-12">
-      <adv-inputnumber
-        nome="Número da OAB"
-        identificador="oab"
-      ></adv-inputnumber>
+      <near-number nome="Número da OAB" identificador="oab"></near-number>
     </div>
 
     <div class="col-lg-4 col-md-6 col-sm-12">
-      <adv-dropdown></adv-dropdown>
+      <near-dropdown></near-dropdown>
     </div>
   </div>
-</adv-formulario>
+</near-formulario>

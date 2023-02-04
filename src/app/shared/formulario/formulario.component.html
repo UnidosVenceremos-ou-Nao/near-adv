@@ -32,54 +32,54 @@
     [ngClass]="item.classe ? item.classe : classe"
   >
     <div *ngIf="item.tipo == 'inputtext'">
-      <adv-inputtext
+      <near-text
         [nome]="item.nome"
         [desabilitar]="item.desabilitar"
         [valorInicial]="item.valorInicial"
-      ></adv-inputtext>
+      ></near-text>
     </div>
 
     <div *ngIf="item.tipo == 'inputnumber'">
-      <adv-inputnumber
+      <near-number
         [nome]="item.nome"
         [desabilitar]="item.desabilitar"
         [valorInicial]="item.valorInicial"
-      ></adv-inputnumber>
+      ></near-number>
     </div>
 
     <div *ngIf="item.tipo == 'inputmask'">
-      <adv-inputmask
+      <near-mask
         [nome]="item.nome"
         [desabilitar]="item.desabilitar"
         [valorInicial]="item.valorInicial"
         [mascara]="item.mascara"
-      ></adv-inputmask>
+      ></near-mask>
     </div>
 
     <div *ngIf="item.tipo == 'inputdocumento'">
-      <adv-inputdocumento
+      <near-documento
         [nome]="item.nome"
         [desabilitar]="item.desabilitar"
         [valorInicial]="item.valorInicial"
-      ></adv-inputdocumento>
+      ></near-documento>
     </div>
 
     <div *ngIf="item.tipo == 'daterange'">
-      <adv-daterange
+      <near-daterange
         [nome]="item.nome"
         [desabilitar]="item.desabilitar"
         [valorInicial]="item.valorInicial"
         [valorFinal]="item.valorFinal"
-      ></adv-daterange>
+      ></near-daterange>
     </div>
 
     <div *ngIf="item.tipo == 'inputtextrange'">
-      <adv-inputtextrange
+      <near-textrange
         [nome]="item.nome"
         [desabilitar]="item.desabilitar"
         [valorInicial]="item.valorInicial"
         [valorFinal]="item.valorFinal"
-      ></adv-inputtextrange>
+      ></near-textrange>
     </div>
   </div>
 </div> -->

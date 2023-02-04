@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdvSystemComponent } from './adv-system.component';
+import { AdvSystemComponent } from './near-system.component';
 
 describe('AdvSystemComponent', () => {
   let component: AdvSystemComponent;
@@ -8,9 +8,8 @@ describe('AdvSystemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AdvSystemComponent ]
-    })
-    .compileComponents();
+      declarations: [AdvSystemComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AdvSystemComponent);
     component = fixture.componentInstance;

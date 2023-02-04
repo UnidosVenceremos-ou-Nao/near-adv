@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { lista } from '../lista';
 
 @Component({
-  selector: 'adv-table',
+  selector: 'near-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss'],
 })

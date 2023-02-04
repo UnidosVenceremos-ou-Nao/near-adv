@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'adv-listagem',
+  selector: 'near-listagem',
   templateUrl: './listagem.component.html',
   styleUrls: ['./listagem.component.scss'],
 })

@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'adv-daterange',
+  selector: 'near-daterange',
   templateUrl: './daterange.component.html',
   styleUrls: ['./daterange.component.scss'],
 })

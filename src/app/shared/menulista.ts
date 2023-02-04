@@ -1,6 +1,6 @@
 export const LISTA_MENU = [
   {
-    modulo: 'adv',
+    modulo: 'near',
     icone: 'scale-balanced',
     ativo: true,
     tooltip: 'TESTE 1',

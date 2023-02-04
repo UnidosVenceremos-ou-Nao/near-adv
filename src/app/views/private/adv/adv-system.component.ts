@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'adv-adv-system',
+  selector: 'near-near-system',
   templateUrl: './adv-system.component.html',
-  styleUrls: ['./adv-system.component.scss']
+  styleUrls: ['./adv-system.component.scss'],
 })
-export class AdvSystemComponent {
-
-}
+export class AdvSystemComponent {}

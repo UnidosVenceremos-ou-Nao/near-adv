@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'adv-inputdocumento',
+  selector: 'near-documento',
   templateUrl: './inputdocumento.component.html',
   styleUrls: ['./inputdocumento.component.scss'],
 })

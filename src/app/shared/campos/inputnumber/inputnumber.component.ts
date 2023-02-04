@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'adv-inputnumber',
+  selector: 'near-number',
   templateUrl: './inputnumber.component.html',
   styleUrls: ['./inputnumber.component.scss'],
 })

@@ -5,7 +5,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { SharedModule } from '../../../../shared/shared.module';
 
 @Component({
-  selector: 'adv-equipe',
+  selector: 'near-equipe',
   templateUrl: './equipe.component.html',
   standalone: true,
   imports: [SharedModule],

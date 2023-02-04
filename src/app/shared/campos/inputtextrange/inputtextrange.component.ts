@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'adv-inputtextrange',
+  selector: 'near-textrange',
   templateUrl: './inputtextrange.component.html',
   styleUrls: ['./inputtextrange.component.scss'],
 })

@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'adv-inputmask',
+  selector: 'near-mask',
   templateUrl: './inputmask.component.html',
   styleUrls: ['./inputmask.component.scss'],
 })

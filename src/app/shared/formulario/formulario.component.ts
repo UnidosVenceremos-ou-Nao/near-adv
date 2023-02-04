@@ -8,7 +8,7 @@ import {
 import { Campo } from '../../security/interfaces/campo';
 
 @Component({
-  selector: 'adv-formulario',
+  selector: 'near-formulario',
   templateUrl: './formulario.component.html',
   styleUrls: ['./formulario.component.scss'],
 })
