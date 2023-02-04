@@ -10,11 +10,11 @@ const routes: Routes = [
   },
   {
     path: '',
-    data: { modulo: 'adv' },
     component: PrivateComponent,
     children: [
       {
         path: 'adv',
+        data: { modulo: 'adv' },
         loadChildren: () =>
           import('./adv/adv-system.module').then((m) => m.AdvSystemModule),
       },

@@ -7,6 +7,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class ListagemComponent {
   @Input() titulo: string = '';
+  @Input() operacao: string = '';
 
   @Input() verBotaoNovo: boolean = true;
   @Output() novoEvent = new EventEmitter<Event>();

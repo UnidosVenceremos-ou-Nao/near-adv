@@ -15,6 +15,12 @@ export class EquipeComponent {
   titulo = 'Equipe';
   operacao = 'listagem';
 
+  opcoesCargo = [
+    { label: 'Item 1', value: 'item-1' },
+    { label: 'Item 2', value: 'item-2' },
+    { label: 'Item 3', value: 'item-3' },
+  ];
+
   constructor(library: FaIconLibrary) {
     library.addIconPacks(fas, fab);
   }

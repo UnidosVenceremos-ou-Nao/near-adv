@@ -1,24 +1,199 @@
 <near-listagem
-  *ngIf="operacao == 'listagemasda'"
+  *ngIf="operacao == 'listagem'"
   [titulo]="titulo"
+  [operacao]="operacao"
   (novoEvent)="novo($event)"
 ></near-listagem>
 
 <near-formulario
-  *ngIf="operacao == 'cadastro' || operacao == 'listagem'"
+  *ngIf="operacao == 'cadastro' || operacao == 'editar'"
   [titulo]="titulo"
   [operacao]="operacao"
 >
   <div class="row">
-    <div class="col-lg-4 col-md-6 col-sm-12">
+    <div class="col-lg-5 col-md-6 col-sm-12">
       <near-text nome="Nome Completo" identificador="nome"></near-text>
     </div>
-    <div class="col-lg-4 col-md-6 col-sm-12">
+    <div class="col-lg-3 col-md-6 col-sm-12">
       <near-number nome="Número da OAB" identificador="oab"></near-number>
     </div>
 
     <div class="col-lg-4 col-md-6 col-sm-12">
-      <near-dropdown></near-dropdown>
+      <near-dropdown [opcoes]="opcoesCargo"></near-dropdown>
+    </div>
+    <div class="col-lg-5 col-md-6 col-sm-12">
+      <near-text nome="Nome Completo" identificador="nome"></near-text>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <near-number nome="Número da OAB" identificador="oab"></near-number>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <near-dropdown [opcoes]="opcoesCargo"></near-dropdown>
+    </div>
+    <div class="col-lg-5 col-md-6 col-sm-12">
+      <near-text nome="Nome Completo" identificador="nome"></near-text>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <near-number nome="Número da OAB" identificador="oab"></near-number>
+    </div>
+    <div class="col-lg-5 col-md-6 col-sm-12">
+      <near-text nome="Nome Completo" identificador="nome"></near-text>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <near-number nome="Número da OAB" identificador="oab"></near-number>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <near-dropdown [opcoes]="opcoesCargo"></near-dropdown>
+    </div>
+    <div class="col-lg-5 col-md-6 col-sm-12">
+      <near-text nome="Nome Completo" identificador="nome"></near-text>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <near-number nome="Número da OAB" identificador="oab"></near-number>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <near-dropdown [opcoes]="opcoesCargo"></near-dropdown>
+    </div>
+    <div class="col-lg-5 col-md-6 col-sm-12">
+      <near-text nome="Nome Completo" identificador="nome"></near-text>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <near-number nome="Número da OAB" identificador="oab"></near-number>
+    </div>
+    <div class="col-lg-5 col-md-6 col-sm-12">
+      <near-text nome="Nome Completo" identificador="nome"></near-text>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <near-number nome="Número da OAB" identificador="oab"></near-number>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <near-dropdown [opcoes]="opcoesCargo"></near-dropdown>
+    </div>
+    <div class="col-lg-5 col-md-6 col-sm-12">
+      <near-text nome="Nome Completo" identificador="nome"></near-text>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <near-number nome="Número da OAB" identificador="oab"></near-number>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <near-dropdown [opcoes]="opcoesCargo"></near-dropdown>
+    </div>
+    <div class="col-lg-5 col-md-6 col-sm-12">
+      <near-text nome="Nome Completo" identificador="nome"></near-text>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <near-number nome="Número da OAB" identificador="oab"></near-number>
+    </div>
+    <div class="col-lg-5 col-md-6 col-sm-12">
+      <near-text nome="Nome Completo" identificador="nome"></near-text>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <near-number nome="Número da OAB" identificador="oab"></near-number>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <near-dropdown [opcoes]="opcoesCargo"></near-dropdown>
+    </div>
+    <div class="col-lg-5 col-md-6 col-sm-12">
+      <near-text nome="Nome Completo" identificador="nome"></near-text>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <near-number nome="Número da OAB" identificador="oab"></near-number>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <near-dropdown [opcoes]="opcoesCargo"></near-dropdown>
+    </div>
+    <div class="col-lg-5 col-md-6 col-sm-12">
+      <near-text nome="Nome Completo" identificador="nome"></near-text>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <near-number nome="Número da OAB" identificador="oab"></near-number>
+    </div>
+    <div class="col-lg-5 col-md-6 col-sm-12">
+      <near-text nome="Nome Completo" identificador="nome"></near-text>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <near-number nome="Número da OAB" identificador="oab"></near-number>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <near-dropdown [opcoes]="opcoesCargo"></near-dropdown>
+    </div>
+    <div class="col-lg-5 col-md-6 col-sm-12">
+      <near-text nome="Nome Completo" identificador="nome"></near-text>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <near-number nome="Número da OAB" identificador="oab"></near-number>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <near-dropdown [opcoes]="opcoesCargo"></near-dropdown>
+    </div>
+    <div class="col-lg-5 col-md-6 col-sm-12">
+      <near-text nome="Nome Completo" identificador="nome"></near-text>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <near-number nome="Número da OAB" identificador="oab"></near-number>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <near-dropdown [opcoes]="opcoesCargo"></near-dropdown>
+    </div>
+    <div class="col-lg-5 col-md-6 col-sm-12">
+      <near-text nome="Nome Completo" identificador="nome"></near-text>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <near-number nome="Número da OAB" identificador="oab"></near-number>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <near-dropdown [opcoes]="opcoesCargo"></near-dropdown>
+    </div>
+    <div class="col-lg-5 col-md-6 col-sm-12">
+      <near-text nome="Nome Completo" identificador="nome"></near-text>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <near-number nome="Número da OAB" identificador="oab"></near-number>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <near-dropdown [opcoes]="opcoesCargo"></near-dropdown>
+    </div>
+    <div class="col-lg-5 col-md-6 col-sm-12">
+      <near-text nome="Nome Completo" identificador="nome"></near-text>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <near-number nome="Número da OAB" identificador="oab"></near-number>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <near-dropdown [opcoes]="opcoesCargo"></near-dropdown>
+    </div>
+    <div class="col-lg-5 col-md-6 col-sm-12">
+      <near-text nome="Nome Completo" identificador="nome"></near-text>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <near-number nome="Número da OAB" identificador="oab"></near-number>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <near-dropdown [opcoes]="opcoesCargo"></near-dropdown>
+    </div>
+    <div class="col-lg-5 col-md-6 col-sm-12">
+      <near-text nome="Nome Completo" identificador="nome"></near-text>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <near-number nome="Número da OAB" identificador="oab"></near-number>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <near-dropdown [opcoes]="opcoesCargo"></near-dropdown>
     </div>
   </div>
 </near-formulario>

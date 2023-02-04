@@ -52,6 +52,7 @@ $w-50: 50%;
     color: var(--font) !important;
   }
 }
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -63,11 +64,13 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
 a {
   color: var(--black);
   font-weight: 600;
   text-decoration: none;
 }
+
 img .img-login {
   width: 100px;
   height: 100px;
@@ -130,4 +133,11 @@ label .class_label {
   button {
     margin-left: 1rem;
   }
+}
+
+.header_sticky {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  background-color: white;
 }

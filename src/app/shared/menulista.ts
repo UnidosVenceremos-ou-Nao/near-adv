@@ -3,7 +3,7 @@ export const LISTA_MENU = [
     modulo: 'adv',
     icone: 'scale-balanced',
     ativo: true,
-    tooltip: 'TESTE 1',
+    nome: 'TESTE 1',
     itensMenu: [
       {
         titulo: 'Dashboard',
@@ -40,7 +40,7 @@ export const LISTA_MENU = [
     modulo: 'outro',
     icone: 'camera-retro',
     ativo: false,
-    tooltip: 'TESTE 2',
+    nome: 'TESTE 2',
     itensMenu: [],
   },
 ];

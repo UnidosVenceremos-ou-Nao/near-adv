@@ -35,7 +35,8 @@ export class NavbarComponent {
   constructor(library: FaIconLibrary, protected route: ActivatedRoute) {
     library.addIconPacks(fas, fab);
 
-    this.moduloAtivo = route.snapshot.data['modulo'];
+    this.moduloAtivo = route.snapshot.children[0].data['modulo'];
+
     this.getMenu();
   }
 
@@ -56,6 +57,5 @@ export class NavbarComponent {
         this.menu.push(...obj.itensMenu);
       }
     }
-    debugger;
   }
 }

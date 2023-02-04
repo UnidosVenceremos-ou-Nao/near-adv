@@ -20,7 +20,6 @@ export class SecurityService {
   }
 
   public setToken(bearer: any) {
-    debugger;
     this.token.next(bearer);
   }
 

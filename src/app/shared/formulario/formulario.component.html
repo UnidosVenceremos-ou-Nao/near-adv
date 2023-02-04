@@ -1,29 +1,31 @@
-<div class="d-flex mb-3 justify-content-between align-items-center">
-  <div>
-    <h4 class="title mb-0">
-      {{ operacao ? (operacao | titlecase) + " de " : "" }}{{ titulo }}
-    </h4>
+<div class="header_sticky" style="padding-top: 1rem">
+  <div class="d-flex mb-3 justify-content-between align-items-center">
+    <div>
+      <h4 class="title mb-0">
+        {{ operacao ? (operacao | titlecase) + " de " : "" }}{{ titulo }}
+      </h4>
+    </div>
+    <div class="actions-header">
+      <button
+        type="button"
+        class="near_botao near_secondary"
+        (click)="cancelar($event)"
+      >
+        <i class="fa-sharp fa-solid fa-xmark"></i>
+        Cancelar
+      </button>
+      <button
+        type="button"
+        class="near_botao near_primary"
+        (click)="salvar($event)"
+      >
+        <i class="fa-sharp fa-solid fa-save"></i>
+        Salvar
+      </button>
+    </div>
   </div>
-  <div class="actions-header">
-    <button
-      type="button"
-      class="near_botao near_secondary"
-      (click)="cancelar($event)"
-    >
-      <i class="fa-sharp fa-solid fa-xmark"></i>
-      Cancelar
-    </button>
-    <button
-      type="button"
-      class="near_botao near_primary"
-      (click)="salvar($event)"
-    >
-      <i class="fa-sharp fa-solid fa-save"></i>
-      Salvar
-    </button>
-  </div>
+  <hr />
 </div>
-<hr />
 <ng-content></ng-content>
 
 <!-- <div class="row">
