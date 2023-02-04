@@ -3,7 +3,8 @@
   [titulo]="titulo"
   [operacao]="operacao"
   (novoEvent)="novo($event)"
-></near-listagem>
+>
+</near-listagem>
 
 <near-formulario
   *ngIf="operacao == 'cadastro' || operacao == 'editar'"
@@ -13,10 +14,22 @@
   <!-- prettier-ignore -->
 
   <div class="row">
-    <div [class]="filtro.funcao == 'Advogado' ? 'col-lg-3 col-md-6 col-sm-12' : 'col-lg-6 col-md-6 col-sm-12'">
-      <near-text nome="Nome Completo" identificador="nome"></near-text>
+    <!-- [class]="filtro.funcao == 'Advogado' ? 'col-lg-3 col-md-6 col-sm-12' : 'col-lg-6 col-md-6 col-sm-12'" -->
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <near-text 
+      nome="Nome Completo" 
+      identificador="nome">
+    </near-text>
+  </div>
+  
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <near-calendar
+        nome="Nome Completo" 
+        identificador="nome">
+      </near-calendar>
     </div>
-    <div [class]="filtro.funcao == 'Advogado' ? 'col-lg-3 col-md-6 col-sm-12': 'col-lg-6 col-md-6 col-sm-12'">
+    
+    <div class="col-lg-4 col-md-6 col-sm-12">
       <near-dropdown
         nome="Função"
         [opcoes]="opcoesCargo"
@@ -24,21 +37,18 @@
       </near-dropdown>
     </div>
 
-    <div
-      class="col-lg-3 col-md-6 col-sm-12"
-      *ngIf="filtro.funcao == 'Advogado'"
-    >
-      <near-number nome="Número da OAB" identificador="oab"></near-number>
+    <div class="col-lg-4 col-md-6 col-sm-12" *ngIf="filtro.funcao == 'Advogado'">
+      <near-number 
+        nome="Número da OAB" 
+        identificador="oab">
+      </near-number>
     </div>
 
-    <div
-      class="col-lg-3 col-md-6 col-sm-12"
-      *ngIf="filtro.funcao == 'Advogado'"
-    >
+    <div class="col-lg-4 col-md-6 col-sm-12" *ngIf="filtro.funcao == 'Advogado'">
       <near-dropdown
         nome="Estado da OAB"
-        [opcoes]="opcoesEstadoOab.estados"
-      ></near-dropdown>
+        [opcoes]="opcoesEstadoOab.estados">
+      </near-dropdown>
     </div>
   </div>
 </near-formulario>

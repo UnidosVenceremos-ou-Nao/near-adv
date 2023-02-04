@@ -5,7 +5,7 @@ import {
   Output,
   EventEmitter,
 } from '@angular/core';
-import { Campo } from '../../security/interfaces/campo';
+import { Campo } from '../interfaces/campo';
 
 @Component({
   selector: 'near-formulario',
