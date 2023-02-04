@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
@@ -31,6 +32,7 @@ import { TableComponent } from './table/table.component';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule,
     FontAwesomeModule,
     NgxMaskDirective,

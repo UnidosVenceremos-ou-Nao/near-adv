@@ -1,6 +1,7 @@
 <label class="class_label">{{ nome }}</label>
 <select
   (change)="onSelectionChange($event)"
+  [(ngModel)]="valorInicial"
   [disabled]="ativo || opcoes.length == 0"
 >
   <option [value]="null">{{ opcoes.length ? "" : placeholder }}</option>

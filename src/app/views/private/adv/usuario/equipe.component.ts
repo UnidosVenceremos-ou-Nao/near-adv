@@ -4,6 +4,7 @@ import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { SharedModule } from '../../../../shared/shared.module';
+import * as ESTADOS from '../../../../shared/json/estados.json';
 
 @Component({
   selector: 'near-equipe',
@@ -22,6 +23,8 @@ export class EquipeComponent {
     { label: 'Item 2', value: 'item-2' },
     { label: 'Item 3', value: 'item-3' },
   ];
+
+  opcoesEstadoOab = ESTADOS;
 
   constructor(library: FaIconLibrary) {
     library.addIconPacks(fas, fab);
