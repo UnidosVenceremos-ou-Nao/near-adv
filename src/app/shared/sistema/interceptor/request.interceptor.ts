@@ -39,6 +39,10 @@ export class RequestInterceptor implements HttpInterceptor {
         });
       }
 
+      requestClone = request.clone({
+        headers: headers,
+      });
+
       return next.handle(requestClone).pipe(
         catchError((error) => {
           if (error.status === 401 || error.status === 410) {
