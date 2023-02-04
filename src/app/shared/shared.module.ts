@@ -6,9 +6,9 @@ import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 import { DaterangeComponent } from './campos/daterange/daterange.component';
 import { InputCpfCnpjComponent } from './campos/inputdocumento/inputdocumento.component';
-import { InputmaskComponent } from './campos/inputmask/inputmask.component';
-import { InputnumberComponent } from './campos/inputnumber/inputnumber.component';
-import { InputtextComponent } from './campos/inputtext/inputtext.component';
+import { InputMaskComponent } from './campos/inputmask/inputmask.component';
+import { InputNumberComponent } from './campos/inputnumber/inputnumber.component';
+import { InputTextComponent } from './campos/inputtext/inputtext.component';
 import { InputtextrangeComponent } from './campos/inputtextrange/inputtextrange.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { ListagemComponent } from './listagem/listagem.component';
@@ -19,9 +19,9 @@ import { TableComponent } from './table/table.component';
     NavbarComponent,
     FormularioComponent,
     DaterangeComponent,
-    InputtextComponent,
-    InputnumberComponent,
-    InputmaskComponent,
+    InputTextComponent,
+    InputNumberComponent,
+    InputMaskComponent,
     InputtextrangeComponent,
     InputCpfCnpjComponent,
     TableComponent,
@@ -35,19 +35,22 @@ import { TableComponent } from './table/table.component';
     NgbAccordionModule,
   ],
   exports: [
-    NavbarComponent,
-    FormularioComponent,
+    CommonModule,
     DaterangeComponent,
-    NgbAccordionModule,
-    InputmaskComponent,
+    FormularioComponent,
+    InputNumberComponent,
+    InputMaskComponent,
     InputCpfCnpjComponent,
     InputtextrangeComponent,
-    InputtextComponent,
-    NgxMaskDirective,
+    InputTextComponent,
+    NavbarComponent,
     ListagemComponent,
-    FontAwesomeModule,
     TableComponent,
-    InputnumberComponent,
+
+    FontAwesomeModule,
+    NgbAccordionModule,
+
+    NgxMaskDirective,
   ],
   providers: [provideNgxMask()],
 })

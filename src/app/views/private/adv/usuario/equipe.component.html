@@ -1,0 +1,23 @@
+<adv-listagem
+  *ngIf="operacao == 'listagemasda'"
+  [titulo]="titulo"
+  (novoEvent)="novo($event)"
+></adv-listagem>
+
+<adv-formulario
+  *ngIf="operacao == 'cadastro' || operacao == 'listagem'"
+  [titulo]="titulo"
+  [operacao]="operacao"
+>
+  <div class="row">
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <adv-inputtext nome="Nome Completo" identificador="nome"></adv-inputtext>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <adv-inputnumber
+        nome="Número da OAB"
+        identificador="oab"
+      ></adv-inputnumber>
+    </div>
+  </div>
+</adv-formulario>

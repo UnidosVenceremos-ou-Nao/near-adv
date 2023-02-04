@@ -1,4 +1,4 @@
-import { UsuarioComponent } from './usuario/usuario.component';
+import { EquipeComponent } from './usuario/equipe.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdvSystemComponent } from './adv-system.component';
@@ -19,8 +19,8 @@ const routes: Routes = [
         component: HomeComponent,
       },
       {
-        path: 'usuario',
-        component: UsuarioComponent,
+        path: 'equipe',
+        component: EquipeComponent,
       },
     ],
   },

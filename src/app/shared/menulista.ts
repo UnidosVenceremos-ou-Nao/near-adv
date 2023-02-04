@@ -7,33 +7,32 @@ export const LISTA_MENU = [
     itensMenu: [
       {
         titulo: 'Dashboard',
+        path: '',
         ativo: false,
         children: [
           {
             nome: 'Início',
-            path: 'adv/inicio',
-            icone: 'user',
-            ativo: true,
-          },
-          {
-            nome: 'Usuário',
-            path: 'adv/usuario',
+            path: 'inicio',
             icone: 'user',
             ativo: true,
           },
           {
             nome: 'Teste',
-            path: 'adv/teste',
+            path: 'teste',
             icone: 'user',
             ativo: false,
-            children: [
-              {
-                path: 'adv/fulano',
-                nome: 'Clientes',
-              },
-            ],
           },
         ],
+      },
+      {
+        titulo: 'Equipe',
+        path: 'equipe',
+        ativo: true,
+      },
+      {
+        titulo: 'Agenda',
+        path: 'equipe',
+        ativo: true,
       },
     ],
   },

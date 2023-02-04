@@ -28,6 +28,10 @@ export class NavbarComponent {
   modulos: any;
   moduloAtivo = '';
 
+  showMenu = false;
+  x = 0;
+  y = 0;
+
   constructor(library: FaIconLibrary, protected route: ActivatedRoute) {
     library.addIconPacks(fas, fab);
 
@@ -52,6 +56,5 @@ export class NavbarComponent {
         this.menu.push(...obj.itensMenu);
       }
     }
-    console.log(this.menu);
   }
 }

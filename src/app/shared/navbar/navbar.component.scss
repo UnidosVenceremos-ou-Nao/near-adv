@@ -43,9 +43,16 @@
     padding: 1rem;
     background-color: var(--background-second-menu);
     a {
-      span {
-        padding-top: 3rem;
+      text-decoration: none;
+      .title {
+        padding: 9.5px 0;
         color: var(--font);
+      }
+      &.item_menu {
+        color: var(--font);
+        font-size: 0.9rem;
+        font-weight: 400 !important;
+        padding-left: 0 !important;
       }
     }
   }

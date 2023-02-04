@@ -9,17 +9,9 @@ export class ListagemComponent {
   @Input() titulo: string = '';
 
   @Input() verBotaoNovo: boolean = true;
-  @Output() criar = new EventEmitter<Event>();
+  @Output() novoEvent = new EventEmitter<Event>();
 
-  @Input() tituloBotaoSecundario: string = '';
-  @Input() verBotaoSecundario: boolean = false;
-  @Output() botaoSecundario = new EventEmitter<Event>();
-
-  clickBotaoNovo(event: any) {
-    this.criar.next(event);
-  }
-
-  clickBotaoSecundario(event: any) {
-    this.botaoSecundario.next(event);
+  novo(event: any) {
+    this.novoEvent.next(event);
   }
 }

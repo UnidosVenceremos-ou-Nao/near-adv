@@ -34,10 +34,13 @@ $w-50: 50%;
 
   --background-first-menu: #fbfbfb;
   --background-second-menu: #fff;
-  --background-button: #fff;
+  --background-button-primary: #0e2b78;
+  --background-button-secondary: #fff;
   --background-content: #fff;
 
-  --font: #10141d;
+  --font: #0e2b78;
+  --font-primary: #fff;
+  --font-secondary: #0e2b78;
   --font-disabled: #b3b3b3;
 }
 
@@ -45,7 +48,7 @@ $w-50: 50%;
   font-family: "Poppins", sans-serif;
   font-size: 0.9rem;
   .title {
-    font-weight: 900;
+    font-weight: 600;
     color: var(--font) !important;
   }
 }
@@ -99,15 +102,34 @@ input {
 }
 
 .near_botao {
-  background-color: var(--background-button);
+  &.near_primary {
+    background-color: var(--background-button-primary);
+    color: var(--font-primary);
+    border: 1px solid var(--border-button);
+  }
+
+  &.near_secondary {
+    background-color: var(--background-button-secondary);
+    color: var(--font-secondary);
+    border: 1px solid var(--font-secondary);
+  }
+
   padding: 10px 35px;
-  color: var(--font);
   border-radius: 5px;
-  border: 1px solid var(--border-button);
   align-items: center;
   display: flex;
   i {
-    color: var(--font);
+    &.near_primary {
+      color: var(--font-secondary);
+    }
+    &.near_secondary {
+    }
     margin-right: 10px;
+  }
+}
+.actions-header {
+  display: flex;
+  button {
+    margin-left: 1rem;
   }
 }

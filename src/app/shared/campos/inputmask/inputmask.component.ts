@@ -5,7 +5,7 @@ import { Component, Input } from '@angular/core';
   templateUrl: './inputmask.component.html',
   styleUrls: ['./inputmask.component.scss'],
 })
-export class InputmaskComponent {
+export class InputMaskComponent {
   @Input('nome') nome: string = '';
   @Input('valorInicial') valorInicial: any = '';
   @Input('identificador') identificador: string = '';

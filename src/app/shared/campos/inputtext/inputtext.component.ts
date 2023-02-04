@@ -5,7 +5,7 @@ import { Component, Input } from '@angular/core';
   templateUrl: './inputtext.component.html',
   styleUrls: ['./inputtext.component.scss'],
 })
-export class InputtextComponent {
+export class InputTextComponent {
   @Input('nome') nome: string = '';
   @Input('valorInicial') valorInicial: any = '';
   @Input('identificador') identificador: string = '';

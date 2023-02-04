@@ -28,35 +28,43 @@
     <a
       class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none"
     >
-      <span class="fs-4">Near Hub</span>
+      <span class="title fs-4">Near Hub</span>
     </a>
     <hr />
-    <ngb-accordion #acc="ngbAccordion" *ngFor="let e of menu">
-      <ngb-panel [title]="e.titulo">
-        <ng-template ngbPanelContent>
-          <ul class="nav nav-pills flex-column mb-auto">
-            <li class="nav-item" *ngFor="let item of e.children">
-              <a
-                class="nav-link"
-                [routerLink]="[item.path]"
-                [relativeTo]="route"
-                [class.disabled]="item.ativo ? false : true"
-                [routerLinkActive]="['active']"
-                aria-current="page"
-              >
-                <fa-icon
-                  [icon]="['fas', item.icone]"
-                  size="1x"
-                  class="mr-2"
-                ></fa-icon>
+    <div *ngFor="let e of menu" class="mb-2">
+      <ngb-accordion #acc="ngbAccordion" *ngIf="!e.path">
+        <ngb-panel [title]="e.titulo">
+          <ng-template ngbPanelContent>
+            <ul class="nav nav-pills flex-column mb-auto">
+              <li class="nav-item" *ngFor="let item of e.children">
+                <a
+                  class="nav-link"
+                  [routerLink]="[moduloAtivo + '/' + item.path]"
+                  [relativeTo]="route"
+                  [class.disabled]="item.ativo ? false : true"
+                  [routerLinkActive]="['active']"
+                  aria-current="page"
+                >
+                  <fa-icon
+                    [icon]="['fas', item.icone]"
+                    size="1x"
+                    class="mr-2"
+                  ></fa-icon>
 
-                {{ item.nome }}
-              </a>
-            </li>
-          </ul>
-        </ng-template>
-      </ngb-panel>
-    </ngb-accordion>
+                  {{ item.nome }}
+                </a>
+              </li>
+            </ul>
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+
+      <div *ngIf="e.path">
+        <a class="item_menu" [routerLink]="[moduloAtivo + '/' + e.path]">{{
+          e.titulo
+        }}</a>
+      </div>
+    </div>
   </div>
 </div>
 
