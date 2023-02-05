@@ -1,9 +1,66 @@
-.body-login {
-  width: 70%;
+section {
+  overflow: hidden;
+  background-color: #272a37;
 }
-.titulo {
-  font-size: 2rem;
+.card_login {
+  width: 50%;
+  padding: 1rem;
+  height: auto;
+
+  h2,
+  span,
+  label,
+  p,
+  a {
+    color: white;
+  }
+  h2 {
+    margin-bottom: 2rem;
+  }
+  .actions {
+    button {
+      &.botao_acessar {
+        border: none;
+        margin-top: 1.5rem;
+        background-color: #1d90f5;
+        color: white;
+      }
+
+      &.botao_cancelar {
+        margin-top: 0.6rem;
+        color: #fff;
+        border: 1px solid #fff;
+        background-color: transparent;
+      }
+    }
+    .botao_acessar:hover {
+      font-weight: 800;
+      transition: 0.4s ease-in-out;
+    }
+  }
 }
-form {
-  margin-top: 2rem;
+.nav-tabs {
+  .nav-item {
+    align-items: center !important;
+    width: 50%;
+    a {
+      display: flex;
+      justify-content: center !important;
+      width: 100%;
+      border-bottom: 2px solid white;
+      &.active {
+        background-color: transparent;
+        border-bottom: 2px solid red;
+        font-weight: 600;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+      }
+      :hover {
+        border-top: none;
+        border-left: none;
+        border-right: none;
+      }
+    }
+  }
 }

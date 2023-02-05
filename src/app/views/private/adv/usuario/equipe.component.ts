@@ -31,7 +31,7 @@ export class EquipeComponent {
   }
 
   novo(valor: any) {
-    this.operacao = 'cadastro';
+    this.operacao = 'cadastrar';
   }
 
   teste(valor: any) {

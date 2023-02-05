@@ -1,3 +1,4 @@
+import { SharedModule } from './shared/shared.module';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -6,7 +7,11 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {
+  NgbModule,
+  NgbNavModule,
+  NgbNavConfig,
+} from '@ng-bootstrap/ng-bootstrap';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +23,8 @@ import { RequestInterceptor } from './shared/sistema/interceptor/request.interce
     BrowserModule,
     AppRoutingModule,
     CommonModule,
+    SharedModule,
+    NgbNavModule,
     ReactiveFormsModule,
     NgbModule,
     AngularFireAuthModule,
@@ -26,6 +33,7 @@ import { RequestInterceptor } from './shared/sistema/interceptor/request.interce
     provideAuth(() => getAuth()),
   ],
   providers: [
+    NgbNavConfig,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: RequestInterceptor,
