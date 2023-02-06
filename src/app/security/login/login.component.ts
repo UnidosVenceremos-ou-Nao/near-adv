@@ -1,3 +1,4 @@
+import { NovoUsuario } from './../interfaces/firebaseuser';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -36,14 +37,16 @@ export class LoginComponent {
     let password = this.formulario.controls['senha'].value;
 
     this.loginService.SignIn(email, password);
+  }
 
-    // let usuario: NovoUsuario = new NovoUsuario();
+  criarUsuario() {
+    let usuario: NovoUsuario = new NovoUsuario();
 
-    // usuario.email = 'paulomesquita0@gmail.com';
-    // usuario.senha = '123456';
-    // usuario.celular = '123456';
+    usuario.email = 'paulomesquita0@gmail.com';
+    usuario.senha = '123456';
+    usuario.celular = '123456';
 
-    // this.loginService.signUp(usuario);
+    this.loginService.signUp(usuario);
   }
 
   changeCampoSenha(event: any) {
@@ -62,5 +65,13 @@ export class LoginComponent {
   cancelar() {
     this.textoBotao = 'Acessar';
     this.exibirBotaoCancelar = false;
+  }
+
+  confirmar(nav: any) {
+    if (nav.activeId === 1) {
+      this.acessar();
+    } else if (nav.activeId === 2) {
+      this.acessar();
+    }
   }
 }

@@ -65,6 +65,18 @@
                   aria-label="E-mail"
                 />
               </div>
+
+              <div class="my-3">
+                <label class="form-label">Celular</label>
+                <input
+                  type="number"
+                  [required]="exibirBotaoCancelar"
+                  class="form-control"
+                  placeholder="Celular"
+                  aria-label="Celular"
+                />
+              </div>
+
               <div class="mb-0">
                 <label class="form-label">Senha</label>
                 <input
@@ -76,7 +88,7 @@
                 />
               </div>
 
-              <div class="form-check">
+              <div class="form-check" *ngIf="exibirBotaoCancelar">
                 <input
                   class="form-check-input"
                   type="checkbox"
@@ -94,9 +106,13 @@
         <div [ngbNavOutlet]="nav" class="mt-2"></div>
 
         <div class="actions">
-          <button class="near_botao botao_acessar w-100">
+          <button
+            class="near_botao botao_acessar w-100"
+            (click)="confirmar(nav)"
+          >
             {{ textoBotao }}
           </button>
+
           <button
             *ngIf="exibirBotaoCancelar"
             (click)="nav.select(1); cancelar()"
@@ -104,8 +120,9 @@
           >
             Cancelar
           </button>
+
           <p class="mt-3" *ngIf="!exibirBotaoCancelar">
-            Esqueceu as senha?
+            Esqueceu a senha?
             <strong><a>Clique aqui</a></strong>
           </p>
         </div>
