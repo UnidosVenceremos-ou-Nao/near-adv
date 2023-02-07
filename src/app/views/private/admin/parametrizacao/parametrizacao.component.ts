@@ -2,7 +2,12 @@ import { MenuService } from './../../../../security/services/menu.service';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ApiReturn } from 'src/app/security/interfaces/apiReturn';
-import { Modulo } from './model/menu';
+import {
+  Item,
+  Menu,
+  Modulo,
+  SubItem,
+} from '../../../../security/interfaces/menu';
 import {
   FormArray,
   FormBuilder,
@@ -34,6 +39,78 @@ export class ParametrizacaoComponent {
 
   constructor(private fb: FormBuilder, private menuService: MenuService) {
     this.buscarItems();
+  }
+
+  save() {
+    // this.loading = true;
+    let menu = this.makeEntity();
+
+    this.menuService.cadastrar(menu).subscribe({
+      next: (res: ApiReturn) => {
+        this.buscarItems();
+        // this.loading = false;
+        // this.notificationService.enviarNotificacaoAtualizarPagina(
+        //   'Tudo certo!',
+        //   `Menu atualizado`,
+        //   'success'
+        // );
+      },
+      error: (error: any) => {
+        // this.loading = false;
+        // this.notificationService.enviarNotificacao(
+        //   'Ops!',
+        //   `${error}`,
+        //   'warning'
+        // );
+      },
+    });
+  }
+  makeEntity() {
+    let menu = new Menu();
+
+    let modulos: Modulo[] = [];
+    this.getFormArray().forEach((m) => {
+      let modulo = new Modulo();
+
+      modulo.id = m.get('id')!.value;
+      modulo.nome = m.get('nome')!.value;
+      modulo.icone = m.get('icone')!.value;
+      modulo.ativo = m.get('ativo')!.value;
+      modulo.path = m.get('path')!.value;
+
+      let itens: Item[] = [];
+      (m.get('itens') as FormArray).controls.forEach((i) => {
+        let item = new Item();
+
+        item.id = i.get('id')!.value;
+        item.nome = i.get('nome')!.value;
+        item.icone = i.get('icone')!.value;
+        item.ativo = i.get('ativo')!.value;
+        item.path = i.get('path')!.value;
+
+        let subItens: SubItem[] = [];
+        (i.get('subItens') as FormArray).controls.forEach((si) => {
+          let subItem = new SubItem();
+
+          subItem.id = si.get('id')!.value;
+          subItem.nome = si.get('nome')!.value;
+          subItem.icone = si.get('icone')!.value;
+          subItem.ativo = si.get('ativo')!.value;
+          subItem.path = si.get('path')!.value;
+
+          subItens.push(subItem);
+        });
+        item.subItens = subItens;
+
+        itens.push(item);
+      });
+      modulo.itens = itens;
+
+      modulos.push(modulo);
+    });
+    menu.modulos = modulos;
+
+    return menu;
   }
 
   buscarItems() {
