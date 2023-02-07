@@ -1,11 +1,12 @@
 section {
   overflow: hidden;
-  background-color: #272a37;
+  background-color: #072839;
 }
 .card_login {
-  width: 50%;
-  padding: 1rem;
+  width: 100%;
+  padding: 0rem 9rem;
   height: auto;
+  border-left: 3px solid #ffffff70;
 
   h2,
   span,
@@ -50,7 +51,7 @@ section {
       border-bottom: 2px solid white;
       &.active {
         background-color: transparent;
-        border-bottom: 2px solid red;
+        border-bottom: 2px solid #f24b42;
         font-weight: 600;
         border-top: none;
         border-left: none;
@@ -63,4 +64,12 @@ section {
       }
     }
   }
+}
+.teste {
+  img {
+    width: 32vw;
+  }
+}
+.abc {
+  height: 80vh;
 }
