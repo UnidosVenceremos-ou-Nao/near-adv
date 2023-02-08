@@ -1,3 +1,4 @@
+import { Usuario } from './../interfaces/firebaseuser';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, NgZone } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
@@ -39,9 +40,9 @@ export class LoginService {
     });
   }
 
-  SignIn(email: string, password: string) {
+  SignIn(usuario: Usuario) {
     this.afAuth
-      .signInWithEmailAndPassword(email, password)
+      .signInWithEmailAndPassword(usuario.email, usuario.senha)
       .then(async (result) => {
         this.SetUserData(result.user);
 

@@ -7,7 +7,7 @@ import { Usuario } from '../../../../../security/interfaces/firebaseuser';
 @Injectable({
   providedIn: 'root',
 })
-export class EquipeService extends GenericService<Usuario, number> {
+export class ClienteService extends GenericService<Usuario, number> {
   constructor(protected http: HttpClient) {
     super(http, `${environment.url}/bookmarks`);
   }

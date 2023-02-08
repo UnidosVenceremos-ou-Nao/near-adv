@@ -1,0 +1,26 @@
+<label class="class_label" [ngClass]="tituloClaro ? 'text-white' : ''">{{
+  nome
+}}</label>
+<input
+  class="inputtext"
+  [type]="visualizarSenha ? 'text' : 'password'"
+  (input)="onChange($event)"
+  [(disabled)]="desabilitar"
+/>
+
+<div class="form-check">
+  <input
+    class="form-check-input"
+    type="checkbox"
+    [checked]="false"
+    (click)="verSenha($event)"
+    id="flexCheckDefault"
+  />
+  <label
+    class="form-check-label"
+    for="flexCheckDefault"
+    [ngClass]="tituloClaro ? 'text-white' : ''"
+  >
+    Exibir senha
+  </label>
+</div>

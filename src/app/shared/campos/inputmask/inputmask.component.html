@@ -1,4 +1,9 @@
-<label [for]="identificador" class="class_label">{{ nome }}</label>
+<label
+  [for]="identificador"
+  class="class_label"
+  [ngClass]="tituloClaro ? 'text-white' : ''"
+  >{{ nome }}</label
+>
 <input
   type="text"
   (input)="onChange($event)"

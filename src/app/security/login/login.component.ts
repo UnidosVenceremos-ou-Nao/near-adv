@@ -1,9 +1,9 @@
-import { NovoUsuario } from './../interfaces/firebaseuser';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgbNavChangeEvent, NgbNavConfig } from '@ng-bootstrap/ng-bootstrap';
 import { SecurityService } from '../services/security.service';
+import { NovoUsuario, Usuario } from './../interfaces/firebaseuser';
 import { LoginService } from './../services/login.service';
 @Component({
   selector: 'sdv-login',
@@ -11,13 +11,11 @@ import { LoginService } from './../services/login.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  formulario = new FormGroup({
-    email: new FormControl(),
-    senha: new FormControl(),
-  });
   visualizarSenha: boolean = false;
   textoBotao: string = 'Acessar';
   exibirBotaoCancelar: boolean = false;
+  usuario: Usuario = new Usuario();
+  novoUsuario: NovoUsuario = new NovoUsuario();
 
   constructor(
     private router: Router,
@@ -33,20 +31,11 @@ export class LoginComponent {
   }
 
   acessar() {
-    let email = this.formulario.controls['email'].value;
-    let password = this.formulario.controls['senha'].value;
-
-    this.loginService.SignIn(email, password);
+    this.loginService.SignIn(this.usuario);
   }
 
   criarUsuario() {
-    let usuario: NovoUsuario = new NovoUsuario();
-
-    usuario.email = 'paulomesquita0@gmail.com';
-    usuario.senha = '123456';
-    usuario.celular = '123456';
-
-    this.loginService.signUp(usuario);
+    this.loginService.signUp(this.novoUsuario);
   }
 
   changeCampoSenha(event: any) {
@@ -54,8 +43,12 @@ export class LoginComponent {
   }
 
   onNavChange(changeEvent: NgbNavChangeEvent) {
+    this.usuario = new Usuario();
+    this.novoUsuario = new NovoUsuario();
+
     this.textoBotao = 'Acessar';
     this.exibirBotaoCancelar = false;
+
     if (changeEvent.nextId === 2) {
       this.exibirBotaoCancelar = true;
       this.textoBotao = 'Confirmar';
@@ -71,7 +64,8 @@ export class LoginComponent {
     if (nav.activeId === 1) {
       this.acessar();
     } else if (nav.activeId === 2) {
-      this.acessar();
+      debugger;
+      this.criarUsuario();
     }
   }
 }

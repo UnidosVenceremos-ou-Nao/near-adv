@@ -1,4 +1,7 @@
-<label [for]="identificador" class="class_label">{{ nome }}</label>
+<label class="class_label" [ngClass]="tituloClaro ? 'text-white' : ''">{{
+  nome
+}}</label>
+
 <input
   class="inputtext"
   type="text"

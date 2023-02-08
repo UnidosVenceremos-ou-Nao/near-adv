@@ -6,12 +6,13 @@ export interface FirebaseUser {
   emailVerified: boolean;
 }
 
-export interface Usuario {
-  uid: string;
-  id: number;
-  perfil: string;
-  nome: string;
-  email: string;
+export class Usuario {
+  uid: string = '';
+  id!: number;
+  perfil: string = '';
+  nome: string = '';
+  email: string = '';
+  senha: string = '';
 }
 
 export class NovoUsuario {

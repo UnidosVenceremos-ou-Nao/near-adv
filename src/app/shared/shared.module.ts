@@ -17,6 +17,7 @@ import { ListagemComponent } from './listagem/listagem.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TableComponent } from './table/table.component';
 import { CalendarComponent } from './campos/calendar/calendar.component';
+import { InputSenhaComponent } from './campos/inputsenha/inputsenha.component';
 @NgModule({
   declarations: [
     DaterangeComponent,
@@ -30,6 +31,7 @@ import { CalendarComponent } from './campos/calendar/calendar.component';
     ListagemComponent,
     NavbarComponent,
     TableComponent,
+    InputSenhaComponent,
     CalendarComponent,
   ],
   imports: [
@@ -48,6 +50,7 @@ import { CalendarComponent } from './campos/calendar/calendar.component';
     InputCpfCnpjComponent,
     InputNumberComponent,
     CalendarComponent,
+    InputSenhaComponent,
     InputMaskComponent,
     InputtextrangeComponent,
     InputTextComponent,

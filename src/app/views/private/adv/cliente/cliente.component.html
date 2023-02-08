@@ -1,0 +1,71 @@
+<near-listagem
+  *ngIf="operacao == 'listagem'"
+  [titulo]="titulo"
+  [operacao]="operacao"
+  (novoEvent)="novo($event)"
+>
+</near-listagem>
+
+<near-formulario
+  *ngIf="operacao == 'cadastrar' || operacao == 'editar'"
+  [titulo]="titulo"
+  [operacao]="operacao"
+>
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <near-text nome="Nome Completo" identificador="nome"> </near-text>
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <near-documento nome="CPF/CNPJ"> </near-documento>
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <near-number nome="RG"> </near-number>
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <near-calendar nome="Data de Nascimento" identificador="dataNascimento">
+      </near-calendar>
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <near-dropdown
+        nome="Estado Civil"
+        [opcoes]="opcoesEstadoCivil"
+      ></near-dropdown>
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <near-dropdown
+        nome="Nacionalidade"
+        valorInicial="brasileiro"
+        [opcoes]="opcoesNacionalidades.nacionalidade"
+      ></near-dropdown>
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <near-text nome="Profissão"> </near-text>
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <near-text nome="Observação"> </near-text>
+    </div>
+    <hr />
+
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <near-text nome="E-mail"></near-text>
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <near-mask
+        nome="Telefone"
+        mascara="(00) 0000-0000||(00) 0 0000-0000"
+      ></near-mask>
+    </div>
+
+    <div class="col-lg-2 col-md-6 col-sm-12">
+      <near-number nome="Ramal"></near-number>
+    </div>
+  </div>
+</near-formulario>

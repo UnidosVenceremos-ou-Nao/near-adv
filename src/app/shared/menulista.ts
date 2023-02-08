@@ -25,13 +25,13 @@ export const LISTA_MENU = [
         ],
       },
       {
-        titulo: 'Equipe',
-        path: 'equipe',
+        titulo: 'Cliente',
+        path: 'cliente',
         ativo: true,
       },
       {
         titulo: 'Agenda',
-        path: 'equipe',
+        path: 'cliente',
         ativo: true,
       },
     ],

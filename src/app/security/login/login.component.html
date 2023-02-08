@@ -6,8 +6,8 @@
       <img src="../../../assets/images/ABC.png" alt="" />
     </div>
     <div class="col-md-6 d-flex justify-content-center align-items-center">
-      <div class="card_login">
-        <div>
+      <div class="justify-content-center align-items-center d-flex card_login">
+        <div class="login">
           <h2>Adv System</h2>
           <ul
             ngbNav
@@ -18,90 +18,42 @@
             <li [ngbNavItem]="1">
               <a ngbNavLink>Login</a>
               <ng-template ngbNavContent>
-                <span>Acesse o portal utilizando as suas credenciais</span>
-                <div class="my-3">
-                  <label class="form-label">Email</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    required
-                    placeholder="E-mail"
-                    aria-label="E-mail"
-                  />
-                </div>
-                <div class="mb-0">
-                  <label class="form-label">Senha</label>
-                  <input
-                    [type]="visualizarSenha ? 'text' : 'password'"
-                    class="form-control"
-                    required
-                    placeholder="Senha"
-                    aria-label="Senha"
-                  />
-                </div>
+                <p>Acesse o portal utilizando as suas credenciais</p>
 
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    (click)="changeCampoSenha($event)"
-                    id="flexCheckDefault"
-                  />
-                  <label class="form-check-label" for="flexCheckDefault">
-                    Exibir senha
-                  </label>
-                </div>
+                <near-text
+                  nome="E-mail"
+                  [valorInicial]="usuario.email"
+                  (valor)="usuario.email = $event"
+                ></near-text>
+
+                <near-senha
+                  nome="Senha"
+                  [valorInicial]="usuario.senha"
+                  (valor)="usuario.senha = $event"
+                ></near-senha>
               </ng-template>
             </li>
 
             <li [ngbNavItem]="2">
               <a ngbNavLink>Cadastre-se</a>
               <ng-template ngbNavContent>
-                <span>Cadastre-se no portal </span>
-                <div class="my-3">
-                  <label class="form-label">Email</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    required
-                    placeholder="E-mail"
-                    aria-label="E-mail"
-                  />
-                </div>
+                <p>Cadastre-se no portal</p>
 
-                <div class="my-3">
-                  <label class="form-label">Celular</label>
-                  <input
-                    type="number"
-                    [required]="exibirBotaoCancelar"
-                    class="form-control"
-                    placeholder="Celular"
-                    aria-label="Celular"
-                  />
-                </div>
+                <near-text
+                  nome="E-mail"
+                  (valor)="novoUsuario.email = $event"
+                ></near-text>
 
-                <div class="mb-0">
-                  <label class="form-label">Senha</label>
-                  <input
-                    [type]="visualizarSenha ? 'text' : 'password'"
-                    class="form-control"
-                    required
-                    placeholder="Senha"
-                    aria-label="Senha"
-                  />
-                </div>
+                <near-mask
+                  nome="Celular"
+                  [mascara]="'(00) 0 0000-0000'"
+                  (valor)="novoUsuario.celular = $event"
+                ></near-mask>
 
-                <div class="form-check" *ngIf="exibirBotaoCancelar">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    (click)="changeCampoSenha($event)"
-                    id="flexCheckDefault"
-                  />
-                  <label class="form-check-label" for="flexCheckDefault">
-                    Exibir senha
-                  </label>
-                </div>
+                <near-senha
+                  nome="Senha"
+                  (valor)="novoUsuario.senha = $event"
+                ></near-senha>
               </ng-template>
             </li>
           </ul>

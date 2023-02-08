@@ -1,8 +1,7 @@
-<label [for]="identificador" class="class_label">{{ nome }}</label>
+<label class="class_label">{{ nome }}</label>
 <input
   type="number"
   [(value)]="valorInicial"
   (input)="onChange($event)"
-  [id]="identificador"
   [(disabled)]="desabilitar"
 />

@@ -5,7 +5,7 @@
   [disabled]="ativo || opcoes.length == 0"
 >
   <option [value]="null">{{ opcoes.length ? "" : placeholder }}</option>
-  <option *ngFor="let item of opcoes" [value]="item.value">
-    {{ item.label }}
+  <option *ngFor="let item of opcoes" [value]="item.value || item">
+    {{ (item.label | titlecase) || (item | titlecase) }}
   </option>
 </select>

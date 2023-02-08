@@ -1,4 +1,4 @@
-export class Equipe {
+export class Cliente {
   nome: string = '';
   funcao: string = '';
   numeroOab: string = '';
