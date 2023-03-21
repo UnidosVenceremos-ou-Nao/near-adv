@@ -9,6 +9,7 @@
 <near-formulario
   *ngIf="operacao == 'cadastrar' || operacao == 'editar'"
   [titulo]="titulo"
+  (cancelar)="operacao = 'listagem'"
   [operacao]="operacao"
 >
   <div class="row">

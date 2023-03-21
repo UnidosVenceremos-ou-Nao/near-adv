@@ -3,7 +3,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 @Component({
   selector: 'near-calendarrange',
   templateUrl: './calendarrange.component.html',
-  styleUrls: ['./calendarrange.component.scss'],
 })
 export class DaterangeComponent {
   @Input() nome = 'Teste';

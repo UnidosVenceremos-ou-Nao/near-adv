@@ -1,10 +1,4 @@
-import {
-  Component,
-  Input,
-  SimpleChanges,
-  Output,
-  EventEmitter,
-} from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Campo } from '../interfaces/campo';
 
 @Component({
@@ -19,14 +13,14 @@ export class FormularioComponent {
   @Input() operacao: string = '';
   @Input() listaCampos: Campo[] = [];
 
-  @Output() salvarEvent = new EventEmitter<Event>();
-  @Output() cancelarEvent = new EventEmitter<Event>();
+  @Output() salvar = new EventEmitter<Event>();
+  @Output() cancelar = new EventEmitter<Event>();
 
-  salvar(event: any) {
-    this.salvarEvent.next(event);
+  save(event: any) {
+    this.salvar.next(event);
   }
 
-  cancelar(event: any) {
-    this.cancelarEvent.next(event);
+  cancel(event: any) {
+    this.cancelar.next(event);
   }
 }
